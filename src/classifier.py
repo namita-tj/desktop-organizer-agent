@@ -13,6 +13,8 @@ Requirements:
 import json
 import urllib.request
 import urllib.error
+import src.memory as _memory
+from src.memory import MEMORY_FILE  # expose for test monkeypatching
 
 # ── Rule-based fallback (kept from v1) ────────────────────────────────────────
 
@@ -91,7 +93,6 @@ def _rule_based_classify(file_obs: dict) -> dict:
 OLLAMA_URL = "http://localhost:11434/api/generate"
 OLLAMA_MODEL = "llama3.2"
 
-# We combine system + user into a single prompt string for Ollama
 PROMPT_TEMPLATE = """You are a file classification assistant.
 Given a filename and its metadata, classify it into exactly one of these categories:
 Documents, Images, Code, Archives, Installers, Videos, Audio, Unknown.
@@ -132,10 +133,10 @@ def _call_llm(file_obs: dict) -> dict | None:
     payload = {
         "model": OLLAMA_MODEL,
         "prompt": _build_prompt(file_obs),
-        "stream": False,        # wait for full response
-        "format": "json",       # forces Ollama to output valid JSON
+        "stream": False,
+        "format": "json",
         "options": {
-            "temperature": 0.1  # low temp = more consistent classifications
+            "temperature": 0.1
         }
     }
 
@@ -152,7 +153,6 @@ def _call_llm(file_obs: dict) -> dict | None:
             raw_text = data["response"].strip()
             parsed = json.loads(raw_text)
 
-            # Validate category is one we recognise
             if parsed.get("category") not in VALID_CATEGORIES:
                 parsed["category"] = "Unknown"
 
@@ -189,12 +189,10 @@ def classify_file(file_obs: dict) -> dict:
             method:     "memory" | "llm" | "rule-based"
         }
     """
-    from memory import lookup  # imported here to avoid circular imports
-
     print(f"  Classifying: {file_obs['name']}")
 
     # ── Layer 1: Memory ───────────────────────────────────────────────────────
-    memory_result = lookup(file_obs)
+    memory_result = _memory.lookup(file_obs, MEMORY_FILE)
     if memory_result:
         print(f"  [MEMORY] Hit: {memory_result['reasoning']}")
         return memory_result
@@ -202,9 +200,12 @@ def classify_file(file_obs: dict) -> dict:
     # ── Layer 2: Ollama LLM ───────────────────────────────────────────────────
     llm_result = _call_llm(file_obs)
     if llm_result:
+        category = llm_result.get("category", "Unknown")
+        if category not in VALID_CATEGORIES:
+            category = "Unknown"
         return {
             "name": file_obs["name"],
-            "category": llm_result["category"],
+            "category": category,
             "confidence": round(float(llm_result.get("confidence", 0.8)), 2),
             "reasoning": llm_result.get("reasoning", ""),
             "method": "llm"

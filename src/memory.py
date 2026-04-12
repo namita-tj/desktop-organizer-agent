@@ -1,81 +1,49 @@
 """
 memory.py — Persistent learning layer for the Desktop Organiser Agent.
-
-How it works:
-    Every time the user corrects a classification, that correction is saved
-    here as a "pattern". Next time a similar file appears, the memory is
-    checked first — before calling Ollama — so the agent learns over time.
-
-Storage:
-    All patterns are saved to memory.json in the project directory.
-    This file grows with every correction and is the agent's "brain".
-
-Pattern matching logic:
-    1. Exact extension match         → confidence 0.92
-    2. Exact filename match          → confidence 0.98 (strongest signal)
-    3. Keyword overlap in filename   → confidence 0.75
-    4. No match                      → returns None (fall through to Ollama)
 """
 
 import json
 from pathlib import Path
 from datetime import datetime
 
-# Where the memory file lives — same folder as the scripts
 MEMORY_FILE = Path(__file__).parent / "memory.json"
 
 DEFAULT_CATEGORIES = [
     "Documents", "Images", "Code", "Archives",
     "Installers", "Videos", "Audio", "Unknown"
 ]
-# ── Internal helpers ───────────────────────────────────────────────────────────
 
-def _load() -> dict:
-    """Load memory from disk. Returns empty structure if file doesn't exist."""
-    if not MEMORY_FILE.exists():
-        return {"patterns": [], "custom_categories": [], "stats": {"total_corrections": 0, "total_lookups": 0}}
+
+def _load(memory_file=None) -> dict:
+    path = Path(memory_file) if memory_file else MEMORY_FILE
+    empty = {"patterns": [], "custom_categories": [], "stats": {"total_corrections": 0, "total_lookups": 0}}
+    if not path.exists():
+        return empty
     try:
-        with open(MEMORY_FILE, "r") as f:
+        with open(path, "r") as f:
             return json.load(f)
     except (json.JSONDecodeError, IOError):
-        # Corrupted file — start fresh
-        return {"patterns": [], "custom_categories": [], "stats": {"total_corrections": 0, "total_lookups": 0}}
+        return empty
 
 
-def _save(memory: dict) -> None:
-    """Write memory to disk."""
-    with open(MEMORY_FILE, "w") as f:
+def _save(memory: dict, memory_file=None) -> None:
+    path = Path(memory_file) if memory_file else MEMORY_FILE
+    with open(path, "w") as f:
         json.dump(memory, f, indent=2)
 
 
-def _extract_keywords(filename: str) -> set[str]:
-    """
-    Split a filename into meaningful keywords.
-    e.g. "resume_final_v3.pdf" → {"resume", "final", "v3"}
-    """
-    # Remove extension, lowercase, split on common separators
+def _extract_keywords(filename: str) -> set:
     stem = Path(filename).stem.lower()
     for sep in ["_", "-", ".", " "]:
         stem = stem.replace(sep, " ")
-    return set(w for w in stem.split() if len(w) > 2)  # skip tiny tokens
+    return set(w for w in stem.split() if len(w) > 2)
 
 
-# ── Public interface ───────────────────────────────────────────────────────────
-
-def lookup(file_obs: dict) -> dict | None:
-    """
-    Check memory for a pattern matching this file.
-
-    Matching priority (strongest → weakest):
-        1. Exact filename match  → 0.98 confidence
-        2. Exact extension match → 0.92 confidence
-        3. Keyword overlap       → 0.75 confidence
-
-    Returns a result dict (same shape as classify_file) or None if no match.
-    """
-    memory = _load()
+def lookup(file_obs: dict, memory_file=None) -> dict | None:
+    path = memory_file or MEMORY_FILE
+    memory = _load(path)
     memory["stats"]["total_lookups"] += 1
-    _save(memory)
+    _save(memory, path)
 
     patterns = memory["patterns"]
     if not patterns:
@@ -92,22 +60,16 @@ def lookup(file_obs: dict) -> dict | None:
         score = 0.0
         match_type = ""
 
-        # Signal 1 — exact filename (strongest)
         if pattern["filename"].lower() == filename:
             score = 0.98
             match_type = "exact-filename"
-
-        # Signal 2 — exact extension
         elif pattern["extension"].lower() == extension:
             score = 0.92
             match_type = "exact-extension"
-
-        # Signal 3 — keyword overlap
         else:
             pattern_keywords = _extract_keywords(pattern["filename"])
             overlap = incoming_keywords & pattern_keywords
             if overlap:
-                # More overlap = higher confidence, capped at 0.75
                 score = min(0.5 + (len(overlap) * 0.1), 0.75)
                 match_type = f"keyword-overlap:{','.join(overlap)}"
 
@@ -121,84 +83,70 @@ def lookup(file_obs: dict) -> dict | None:
                 "method": "memory"
             }
 
-    # Only return if confidence is meaningful
     if best_match and best_match["confidence"] >= 0.6:
         return best_match
-
     return None
 
 
-def save_correction(file_obs: dict, correct_category: str) -> None:
-    """
-    Save a user correction to memory.
-    Called when the user says the agent got a classification wrong.
-
-    Args:
-        file_obs:          The file that was misclassified
-        correct_category:  What the user said it should be
-    """
-    all_categories = get_all_categories()
+def save_correction(file_obs: dict, correct_category: str, memory_file=None) -> None:
+    path = memory_file or MEMORY_FILE
+    all_categories = get_all_categories(path)
     if correct_category not in all_categories:
-        add_custom_category(correct_category)
+        add_custom_category(correct_category, path)
 
-    memory = _load()
+    memory = _load(path)
 
-    # Check if we already have a pattern for this exact filename
-    # If so, update it rather than adding a duplicate
     for pattern in memory["patterns"]:
         if pattern["filename"].lower() == file_obs["name"].lower():
             pattern["correct_category"] = correct_category
             pattern["last_updated"] = datetime.now().isoformat()
             pattern["correction_count"] = pattern.get("correction_count", 1) + 1
-            _save(memory)
+            _save(memory, path)
             print(f"  [MEMORY] Updated existing pattern for {file_obs['name']}")
             return
 
-    # New pattern — add it
-    new_pattern = {
+    memory["patterns"].append({
         "filename": file_obs["name"],
         "extension": file_obs["extension"].lower(),
         "correct_category": correct_category,
         "first_seen": datetime.now().isoformat(),
         "last_updated": datetime.now().isoformat(),
         "correction_count": 1
-    }
-
-    memory["patterns"].append(new_pattern)
+    })
     memory["stats"]["total_corrections"] += 1
-    _save(memory)
+    _save(memory, path)
     print(f"  [MEMORY] Saved: {file_obs['name']} → {correct_category}")
 
-def get_all_categories() -> list:
-    """Return built-in + user-created categories."""
-    memory = _load()
+
+def get_all_categories(memory_file=None) -> list:
+    path = memory_file or MEMORY_FILE
+    memory = _load(path)
     return DEFAULT_CATEGORIES + memory.get("custom_categories", [])
 
 
-def add_custom_category(name: str) -> bool:
-    """Add a new category to memory. Returns False if it already exists."""
+def add_custom_category(name: str, memory_file=None) -> bool:
+    path = memory_file or MEMORY_FILE
     name = name.strip().capitalize()
-    if name in get_all_categories():
+    if name in get_all_categories(path):
         return False
-    memory = _load()
+    memory = _load(path)
     if "custom_categories" not in memory:
         memory["custom_categories"] = []
     memory["custom_categories"].append(name)
-    _save(memory)
+    _save(memory, path)
     print(f"  [MEMORY] New category created: '{name}'")
     return True
 
-def show_stats() -> None:
-    """Print a summary of what the memory currently knows."""
-    memory = _load()
+
+def show_stats(memory_file=None) -> None:
+    path = memory_file or MEMORY_FILE
+    memory = _load(path)
     patterns = memory["patterns"]
     stats = memory["stats"]
-
     print("\n── Memory Stats ─────────────────────────────")
     print(f"  Patterns stored:    {len(patterns)}")
     print(f"  Total corrections:  {stats['total_corrections']}")
     print(f"  Total lookups:      {stats['total_lookups']}")
-
     if patterns:
         print("\n  Known patterns:")
         for p in patterns:
@@ -206,8 +154,8 @@ def show_stats() -> None:
     print("─────────────────────────────────────────────\n")
 
 
-def clear_memory() -> None:
-    """Wipe all learned patterns. Use with caution."""
-    if MEMORY_FILE.exists():
-        MEMORY_FILE.unlink()
+def clear_memory(memory_file=None) -> None:
+    path = Path(memory_file) if memory_file else MEMORY_FILE
+    if path.exists():
+        path.unlink()
     print("  [MEMORY] Cleared all patterns.")

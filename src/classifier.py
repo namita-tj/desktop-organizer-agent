@@ -28,7 +28,7 @@ CATEGORIES = {
         "keywords": ["img", "image", "photo", "screenshot"]
     },
     "Code": {
-        "extensions": [".py", ".js", ".java", ".cpp", ".ts", ".rs", ".go"],
+        "extensions": [".py", ".js", ".java", ".cpp", ".ts", ".rs", ".go", ".html", ".json", ".yaml", ".yml", ".toml"],
         "keywords": ["src", "code", "script", "main", "app"]
     },
     "Archives": {

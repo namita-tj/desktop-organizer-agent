@@ -1,0 +1,51 @@
+[
+  {"name": "resume_final_v3.pdf",           "extension": ".pdf",   "size_bytes": 204800,  "expected": "Documents"},
+  {"name": "lecture_notes.docx",            "extension": ".docx",  "size_bytes": 51200,   "expected": "Documents"},
+  {"name": "project_proposal.pptx",         "extension": ".pptx",  "size_bytes": 102400,  "expected": "Documents"},
+  {"name": "budget_2024.xlsx",              "extension": ".xlsx",  "size_bytes": 40960,   "expected": "Documents"},
+  {"name": "README.txt",                    "extension": ".txt",   "size_bytes": 2048,    "expected": "Documents"},
+  {"name": "invoice_march.pdf",             "extension": ".pdf",   "size_bytes": 102400,  "expected": "Documents"},
+  {"name": "assignment_2_submission.docx",  "extension": ".docx",  "size_bytes": 30720,   "expected": "Documents"},
+
+  {"name": "screenshot_2024.png",           "extension": ".png",   "size_bytes": 512000,  "expected": "Images"},
+  {"name": "profile_photo.jpg",             "extension": ".jpg",   "size_bytes": 204800,  "expected": "Images"},
+  {"name": "banner.jpeg",                   "extension": ".jpeg",  "size_bytes": 153600,  "expected": "Images"},
+  {"name": "logo.svg",                      "extension": ".svg",   "size_bytes": 8192,    "expected": "Images"},
+  {"name": "thumbnail.webp",               "extension": ".webp",  "size_bytes": 61440,   "expected": "Images"},
+  {"name": "animation.gif",                "extension": ".gif",   "size_bytes": 1048576, "expected": "Images"},
+
+  {"name": "data_pipeline.py",             "extension": ".py",    "size_bytes": 8192,    "expected": "Code"},
+  {"name": "App.js",                        "extension": ".js",    "size_bytes": 4096,    "expected": "Code"},
+  {"name": "Main.java",                     "extension": ".java",  "size_bytes": 6144,    "expected": "Code"},
+  {"name": "server.ts",                     "extension": ".ts",    "size_bytes": 5120,    "expected": "Code"},
+  {"name": "calculator.html",              "extension": ".html",  "size_bytes": 3072,    "expected": "Code"},
+  {"name": "config.json",                  "extension": ".json",  "size_bytes": 1024,    "expected": "Code"},
+  {"name": "docker-compose.yaml",          "extension": ".yaml",  "size_bytes": 2048,    "expected": "Code"},
+  {"name": "Cargo.toml",                   "extension": ".toml",  "size_bytes": 1024,    "expected": "Code"},
+
+  {"name": "project_backup.zip",           "extension": ".zip",   "size_bytes": 1048576, "expected": "Archives"},
+  {"name": "node_modules.tar",             "extension": ".tar",   "size_bytes": 5242880, "expected": "Archives"},
+  {"name": "photos_archive.rar",           "extension": ".rar",   "size_bytes": 2097152, "expected": "Archives"},
+  {"name": "backup_2024.7z",              "extension": ".7z",    "size_bytes": 3145728, "expected": "Archives"},
+  {"name": "logs.gz",                      "extension": ".gz",    "size_bytes": 204800,  "expected": "Archives"},
+
+  {"name": "setup_windows.exe",            "extension": ".exe",   "size_bytes": 5242880, "expected": "Installers"},
+  {"name": "installer.msi",               "extension": ".msi",   "size_bytes": 8388608, "expected": "Installers"},
+  {"name": "AppInstaller.dmg",            "extension": ".dmg",   "size_bytes": 10485760,"expected": "Installers"},
+  {"name": "software.pkg",               "extension": ".pkg",   "size_bytes": 6291456, "expected": "Installers"},
+
+  {"name": "vacation_video.mp4",          "extension": ".mp4",   "size_bytes": 52428800,"expected": "Videos"},
+  {"name": "screen_recording.mov",        "extension": ".mov",   "size_bytes": 31457280,"expected": "Videos"},
+  {"name": "clip.avi",                    "extension": ".avi",   "size_bytes": 20971520,"expected": "Videos"},
+  {"name": "lecture_recording.mkv",       "extension": ".mkv",   "size_bytes": 41943040,"expected": "Videos"},
+
+  {"name": "podcast_episode.mp3",         "extension": ".mp3",   "size_bytes": 10485760,"expected": "Audio"},
+  {"name": "song.wav",                    "extension": ".wav",   "size_bytes": 20971520,"expected": "Audio"},
+  {"name": "album_track.flac",            "extension": ".flac",  "size_bytes": 31457280,"expected": "Audio"},
+  {"name": "voice_memo.aac",              "extension": ".aac",   "size_bytes": 2097152, "expected": "Audio"},
+
+  {"name": "Chrome for Developers.lnk",  "extension": ".lnk",   "size_bytes": 1024,    "expected": "Unknown"},
+  {"name": "random_xyz123.blob",          "extension": ".blob",  "size_bytes": 1024,    "expected": "Unknown"},
+  {"name": "mystery_file.xyz",            "extension": ".xyz",   "size_bytes": 512,     "expected": "Unknown"},
+  {"name": "desktop.ini",                "extension": ".ini",   "size_bytes": 256,     "expected": "Unknown"}
+]

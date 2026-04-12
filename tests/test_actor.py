@@ -23,9 +23,13 @@ from src.actor import act, summarise_actions
 
 @pytest.fixture
 def desktop(tmp_path, monkeypatch):
-    """Fake Desktop with ORGANISED_ROOT redirected to tmp_path."""
     organised = tmp_path / "Organised"
     monkeypatch.setattr("src.actor.ORGANISED_ROOT", organised)
+
+    # Redirect move log away from real moves.log
+    fake_moves_log = tmp_path / "moves.log"
+    monkeypatch.setattr("src.actor.MOVES_LOG", fake_moves_log)
+
     return tmp_path, organised
 
 

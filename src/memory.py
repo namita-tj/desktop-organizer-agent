@@ -122,7 +122,7 @@ def lookup(file_obs: dict) -> dict | None:
             }
 
     # Only return if confidence is meaningful
-    if best_match and best_match["confidence"] >= 0.75:
+    if best_match and best_match["confidence"] >= 0.6:
         return best_match
 
     return None
@@ -137,6 +137,10 @@ def save_correction(file_obs: dict, correct_category: str) -> None:
         file_obs:          The file that was misclassified
         correct_category:  What the user said it should be
     """
+    all_categories = get_all_categories()
+    if correct_category not in all_categories:
+        add_custom_category(correct_category)
+
     memory = _load()
 
     # Check if we already have a pattern for this exact filename

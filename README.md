@@ -1,3 +1,4 @@
+![Tests](https://github.com/namita-tj/desktop-organizer-agent/actions/workflows/tests.yml/badge.svg)
 # 🗂️ Desktop Organiser Agent
 
 An LLM-powered agent that scans your Desktop, classifies each file using Claude, and moves them into tidy, organised folders — with a rule-based fallback for offline use.

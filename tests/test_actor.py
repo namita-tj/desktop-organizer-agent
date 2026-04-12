@@ -197,14 +197,15 @@ class TestSummariseActions:
     def test_summarise_does_not_crash_on_empty_log(self):
         summarise_actions([])  # should not raise
 
-    def test_summarise_counts_correctly(self, capsys):
+    def test_summarise_counts_correctly(self, caplog):
+        import logging
         log = [
             {"action": "moved"},
             {"action": "moved"},
             {"action": "dry_run"},
             {"action": "skipped"},
         ]
-        summarise_actions(log)
-        output = capsys.readouterr().out
-        assert "moved" in output
-        assert "2" in output
+        with caplog.at_level(logging.INFO):
+            summarise_actions(log)
+        assert "moved" in caplog.text
+        assert "2" in caplog.text

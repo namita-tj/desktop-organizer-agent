@@ -1,0 +1,7 @@
+# Desktop Organiser Agent — dependencies
+# All runtime code uses Python stdlib only (no pip installs needed to run)
+# Install dev dependencies to run tests and eval
+
+# ── Dev / testing ──────────────────────────────────────────────────────────────
+pytest==8.3.5
+pytest-cov==6.1.0

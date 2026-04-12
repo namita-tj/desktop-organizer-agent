@@ -174,7 +174,11 @@ def _call_llm(file_obs: dict) -> dict | None:
 def classify_file(file_obs: dict) -> dict:
     """
     Classify a file observation dict.
-    Tries LLM first, falls back to rule-based on failure.
+
+    Decision pipeline (in order):
+        1. Memory    — check learned patterns first (fastest, most personal)
+        2. Ollama    — call local LLM if no memory match
+        3. Rule-based — fallback if Ollama is unavailable
 
     Returns:
         {
@@ -182,13 +186,21 @@ def classify_file(file_obs: dict) -> dict:
             category:   str,
             confidence: float,
             reasoning:  str,
-            method:     "llm" | "rule-based"
+            method:     "memory" | "llm" | "rule-based"
         }
     """
+    from memory import lookup  # imported here to avoid circular imports
+
     print(f"  Classifying: {file_obs['name']}")
 
-    llm_result = _call_llm(file_obs)
+    # ── Layer 1: Memory ───────────────────────────────────────────────────────
+    memory_result = lookup(file_obs)
+    if memory_result:
+        print(f"  [MEMORY] Hit: {memory_result['reasoning']}")
+        return memory_result
 
+    # ── Layer 2: Ollama LLM ───────────────────────────────────────────────────
+    llm_result = _call_llm(file_obs)
     if llm_result:
         return {
             "name": file_obs["name"],
@@ -198,7 +210,7 @@ def classify_file(file_obs: dict) -> dict:
             "method": "llm"
         }
 
-    # Fallback
+    # ── Layer 3: Rule-based fallback ──────────────────────────────────────────
     print(f"  [LLM] Falling back to rule-based for {file_obs['name']}")
     return _rule_based_classify(file_obs)
 

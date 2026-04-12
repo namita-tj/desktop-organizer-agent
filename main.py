@@ -11,10 +11,10 @@ Usage:
 """
 
 import argparse
-from observer import observe_desktop
-from classifier import classify_file
-from actor import act, summarise_actions
-from memory import save_correction, show_stats, clear_memory, get_all_categories, add_custom_category
+from src.observer import observe_desktop
+from src.classifier import classify_file
+from src.actor import act, summarise_actions
+from src.memory import save_correction, show_stats, clear_memory, get_all_categories, add_custom_category
 
 VALID_CATEGORIES = [
     "Documents", "Images", "Code", "Archives",

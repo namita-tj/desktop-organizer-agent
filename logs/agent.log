@@ -515,3 +515,636 @@
 2026-04-12 22:04:05  DEBUG     desktop_organiser.src.observer  Found: essay.docx (1 bytes)
 2026-04-12 22:04:05  DEBUG     desktop_organiser.src.observer  Skipping non-file: some_folder
 2026-04-12 22:04:05  INFO      desktop_organiser.src.observer  Found 2 file(s)
+2026-04-12 22:22:29  INFO      desktop_organiser.__main__  === Desktop Organiser Agent starting ===
+2026-04-12 22:22:29  INFO      desktop_organiser.__main__  Mode:      DRY RUN
+2026-04-12 22:22:29  INFO      desktop_organiser.__main__  Threshold: 0.60
+2026-04-12 22:22:29  INFO      desktop_organiser.__main__  Path:      ~/Desktop (default)
+2026-04-12 22:22:29  INFO      desktop_organiser.src.observer  Scanning: C:\Users\namit\Desktop
+2026-04-12 22:22:29  DEBUG     desktop_organiser.src.observer  Skipping non-file: .git
+2026-04-12 22:22:29  DEBUG     desktop_organiser.src.observer  Skipping hidden file: .gitignore
+2026-04-12 22:22:29  DEBUG     desktop_organiser.src.observer  Skipping non-file: 21iz014
+2026-04-12 22:22:29  DEBUG     desktop_organiser.src.observer  Found: app.py (509 bytes)
+2026-04-12 22:22:29  DEBUG     desktop_organiser.src.observer  Found: arcade_adventure.lnk (2786 bytes)
+2026-04-12 22:22:29  DEBUG     desktop_organiser.src.observer  Found: ask_llama.py (365 bytes)
+2026-04-12 22:22:29  DEBUG     desktop_organiser.src.observer  Found: BASE_presentation.pptx (551181 bytes)
+2026-04-12 22:22:29  DEBUG     desktop_organiser.src.observer  Found: calculator.html (1651 bytes)
+2026-04-12 22:22:29  DEBUG     desktop_organiser.src.observer  Found: Chrome for Developers.lnk (2704 bytes)
+2026-04-12 22:22:29  DEBUG     desktop_organiser.src.observer  Found: Create React App Sample.lnk (2708 bytes)
+2026-04-12 22:22:29  DEBUG     desktop_organiser.src.observer  Skipping non-file: desktop-organizer-agent
+2026-04-12 22:22:29  DEBUG     desktop_organiser.src.observer  Skipping ignored name: desktop.ini
+2026-04-12 22:22:29  DEBUG     desktop_organiser.src.observer  Found: Docker Desktop.lnk (2147 bytes)
+2026-04-12 22:22:29  DEBUG     desktop_organiser.src.observer  Skipping non-file: Documents
+2026-04-12 22:22:29  DEBUG     desktop_organiser.src.observer  Skipping non-file: email
+2026-04-12 22:22:29  DEBUG     desktop_organiser.src.observer  Found: endpoint.py (1989 bytes)
+2026-04-12 22:22:29  DEBUG     desktop_organiser.src.observer  Found: gmail_api.py (2514 bytes)
+2026-04-12 22:22:29  DEBUG     desktop_organiser.src.observer  Found: ImageBind-800x420.webp (23554 bytes)
+2026-04-12 22:22:29  DEBUG     desktop_organiser.src.observer  Skipping non-file: Images
+2026-04-12 22:22:29  DEBUG     desktop_organiser.src.observer  Skipping non-file: internship
+2026-04-12 22:22:29  DEBUG     desktop_organiser.src.observer  Skipping non-file: kds-okr
+2026-04-12 22:22:29  DEBUG     desktop_organiser.src.observer  Found: Lightroom.lnk (1045 bytes)
+2026-04-12 22:22:29  DEBUG     desktop_organiser.src.observer  Found: localhost-20240415T233009.html (456176 bytes)
+2026-04-12 22:22:29  DEBUG     desktop_organiser.src.observer  Found: localhost-20240415T233009.json (334318 bytes)
+2026-04-12 22:22:29  DEBUG     desktop_organiser.src.observer  Skipping non-file: Machine learning
+2026-04-12 22:22:29  DEBUG     desktop_organiser.src.observer  Skipping non-file: Mods
+2026-04-12 22:22:29  DEBUG     desktop_organiser.src.observer  Skipping non-file: Namita_APS
+2026-04-12 22:22:29  DEBUG     desktop_organiser.src.observer  Found: ocr.py (861 bytes)
+2026-04-12 22:22:29  DEBUG     desktop_organiser.src.observer  Found: Postman Agent.lnk (2326 bytes)
+2026-04-12 22:22:29  DEBUG     desktop_organiser.src.observer  Found: Roblox Player.lnk (1402 bytes)
+2026-04-12 22:22:29  DEBUG     desktop_organiser.src.observer  Found: Roblox Studio.lnk (1230 bytes)
+2026-04-12 22:22:29  DEBUG     desktop_organiser.src.observer  Found: Shortcut to Desktop (OneDrive - Personal).lnk (1550 bytes)
+2026-04-12 22:22:29  DEBUG     desktop_organiser.src.observer  Found: sum_square.y (261 bytes)
+2026-04-12 22:22:29  DEBUG     desktop_organiser.src.observer  Found: test.py (232 bytes)
+2026-04-12 22:22:29  DEBUG     desktop_organiser.src.observer  Skipping non-file: Thesis
+2026-04-12 22:22:29  DEBUG     desktop_organiser.src.observer  Skipping non-file: uploads
+2026-04-12 22:22:29  DEBUG     desktop_organiser.src.observer  Skipping non-file: venv
+2026-04-12 22:22:29  DEBUG     desktop_organiser.src.observer  Skipping non-file: visa docs
+2026-04-12 22:22:29  INFO      desktop_organiser.src.observer  Found 21 file(s)
+2026-04-12 22:22:29  INFO      desktop_organiser.src.classifier  Classifying: app.py
+2026-04-12 22:22:52  DEBUG     desktop_organiser.src.classifier  Rule-based: resume.pdf → Documents (0.80)
+2026-04-12 22:22:52  DEBUG     desktop_organiser.src.classifier  Rule-based: app.py → Code (0.80)
+2026-04-12 22:22:52  DEBUG     desktop_organiser.src.classifier  Rule-based: photo.png → Images (0.80)
+2026-04-12 22:22:52  DEBUG     desktop_organiser.src.classifier  Rule-based: backup.zip → Archives (0.80)
+2026-04-12 22:22:52  DEBUG     desktop_organiser.src.classifier  Rule-based: setup.exe → Installers (0.80)
+2026-04-12 22:22:52  DEBUG     desktop_organiser.src.classifier  Rule-based: random.blob → Unknown (0.00)
+2026-04-12 22:22:52  DEBUG     desktop_organiser.src.classifier  Rule-based: resume.blob → Documents (0.20)
+2026-04-12 22:22:52  INFO      desktop_organiser.src.classifier  Classifying: resume.pdf
+2026-04-12 22:22:52  INFO      desktop_organiser.src.classifier  Classifying: app.py
+2026-04-12 22:22:52  INFO      desktop_organiser.src.classifier  LLM unavailable for app.py - falling back to rules
+2026-04-12 22:22:52  DEBUG     desktop_organiser.src.classifier  Rule-based: app.py → Code (0.80)
+2026-04-12 22:22:52  INFO      desktop_organiser.src.classifier  Classifying: random.blob
+2026-04-12 22:22:52  INFO      desktop_organiser.src.classifier  LLM unavailable for random.blob - falling back to rules
+2026-04-12 22:22:52  DEBUG     desktop_organiser.src.classifier  Rule-based: random.blob → Unknown (0.00)
+2026-04-12 22:22:52  INFO      desktop_organiser.src.classifier  Classifying: random.blob
+2026-04-12 22:22:52  INFO      desktop_organiser.src.classifier  Classifying: app.py
+2026-04-12 22:22:52  INFO      desktop_organiser.src.classifier  Classifying: app.py
+2026-04-12 22:22:52  INFO      desktop_organiser.src.memory  Saved correction: resume.pdf -> Documents
+2026-04-12 22:22:52  INFO      desktop_organiser.src.classifier  Classifying: resume.pdf
+2026-04-12 22:22:52  DEBUG     desktop_organiser.src.memory  Memory hit for resume.pdf -> Documents (0.98)
+2026-04-12 22:22:52  INFO      desktop_organiser.src.classifier  Memory hit for resume.pdf -> Documents
+2026-04-12 22:22:52  INFO      desktop_organiser.src.memory  New category created: 'Uni'
+2026-04-12 22:22:52  INFO      desktop_organiser.src.memory  Saved correction: resume.pdf -> Uni
+2026-04-12 22:22:52  INFO      desktop_organiser.src.classifier  Classifying: resume.pdf
+2026-04-12 22:22:52  DEBUG     desktop_organiser.src.memory  Memory hit for resume.pdf -> Uni (0.98)
+2026-04-12 22:22:52  INFO      desktop_organiser.src.classifier  Memory hit for resume.pdf -> Uni
+2026-04-12 22:22:52  INFO      desktop_organiser.src.classifier  Classifying: app.py
+2026-04-12 22:22:53  INFO      desktop_organiser.src.classifier  Classifying: app.py
+2026-04-12 22:22:53  INFO      desktop_organiser.src.classifier  LLM unavailable for app.py - falling back to rules
+2026-04-12 22:22:53  DEBUG     desktop_organiser.src.classifier  Rule-based: app.py → Code (0.80)
+2026-04-12 22:22:53  INFO      desktop_organiser.src.memory  New category created: 'App'
+2026-04-12 22:22:53  INFO      desktop_organiser.src.memory  Saved correction: arcade_adventure.lnk -> App
+2026-04-12 22:22:53  DEBUG     desktop_organiser.src.memory  Memory hit for arcade_adventure.lnk -> App (0.98)
+2026-04-12 22:22:53  INFO      desktop_organiser.src.memory  New category created: 'App'
+2026-04-12 22:22:53  INFO      desktop_organiser.src.memory  Saved correction: arcade_adventure.lnk -> App
+2026-04-12 22:22:53  DEBUG     desktop_organiser.src.memory  Memory hit for docker_desktop.lnk -> App (0.92)
+2026-04-12 22:22:53  INFO      desktop_organiser.src.memory  New category created: 'App'
+2026-04-12 22:22:53  INFO      desktop_organiser.src.memory  Saved correction: arcade_adventure.lnk -> App
+2026-04-12 22:22:53  INFO      desktop_organiser.src.memory  New category created: 'App'
+2026-04-12 22:22:53  INFO      desktop_organiser.src.memory  Saved correction: arcade_adventure.lnk -> App
+2026-04-12 22:22:53  DEBUG     desktop_organiser.src.memory  Memory hit for arcade_game.exe -> App (0.60)
+2026-04-12 22:22:53  INFO      desktop_organiser.src.memory  New category created: 'App'
+2026-04-12 22:22:53  INFO      desktop_organiser.src.memory  Saved correction: arcade_adventure.lnk -> App
+2026-04-12 22:22:53  INFO      desktop_organiser.src.memory  New category created: 'Shortcuts'
+2026-04-12 22:22:53  INFO      desktop_organiser.src.memory  Updated pattern for arcade_adventure.lnk -> Shortcuts
+2026-04-12 22:22:53  INFO      desktop_organiser.src.memory  New category created: 'App'
+2026-04-12 22:22:53  INFO      desktop_organiser.src.memory  Saved correction: arcade_adventure.lnk -> App
+2026-04-12 22:22:53  INFO      desktop_organiser.src.memory  New category created: 'Shortcuts'
+2026-04-12 22:22:53  INFO      desktop_organiser.src.memory  Updated pattern for arcade_adventure.lnk -> Shortcuts
+2026-04-12 22:22:53  INFO      desktop_organiser.src.memory  New category created: 'Uni'
+2026-04-12 22:22:53  INFO      desktop_organiser.src.memory  New category created: 'Uni'
+2026-04-12 22:22:53  INFO      desktop_organiser.src.memory  New category created: 'Newcategory'
+2026-04-12 22:22:53  INFO      desktop_organiser.src.memory  Saved correction: arcade_adventure.lnk -> NewCategory
+2026-04-12 22:22:53  DEBUG     desktop_organiser.src.memory  Memory hit for arcade_adventure.lnk -> NewCategory (0.98)
+2026-04-12 22:22:53  INFO      desktop_organiser.src.memory  New category created: 'App'
+2026-04-12 22:22:53  INFO      desktop_organiser.src.memory  Saved correction: arcade_adventure.lnk -> App
+2026-04-12 22:22:53  INFO      desktop_organiser.src.memory  New category created: 'Uni'
+2026-04-12 22:22:53  INFO      desktop_organiser.src.memory  Memory cleared
+2026-04-12 22:22:53  INFO      desktop_organiser.src.memory  New category created: 'App'
+2026-04-12 22:22:53  INFO      desktop_organiser.src.memory  Saved correction: arcade_adventure.lnk -> App
+2026-04-12 22:22:53  INFO      desktop_organiser.src.memory  Saved correction: data_pipeline.py -> Code
+2026-04-12 22:22:53  WARNING   desktop_organiser.src.memory  Could not load memory file C:\Users\namit\AppData\Local\Temp\pytest-of-namit\pytest-17\test_corrupted_json_handled_gr0\bad_memory.json: Expecting property name enclosed in double quotes: line 1 column 3 (char 2) - starting fresh
+2026-04-12 22:22:53  INFO      desktop_organiser.src.memory  New category created: 'App'
+2026-04-12 22:22:53  INFO      desktop_organiser.src.memory  Saved correction: arcade_adventure.lnk -> App
+2026-04-12 22:22:53  DEBUG     desktop_organiser.src.memory  Memory hit for arcade_adventure.lnk -> App (0.98)
+2026-04-12 22:22:53  INFO      desktop_organiser.src.memory  New category created: 'Shortcuts'
+2026-04-12 22:22:53  INFO      desktop_organiser.src.memory  Saved correction: other_app.lnk -> Shortcuts
+2026-04-12 22:22:53  INFO      desktop_organiser.src.memory  New category created: 'App'
+2026-04-12 22:22:53  INFO      desktop_organiser.src.memory  Saved correction: arcade_adventure.lnk -> App
+2026-04-12 22:22:53  DEBUG     desktop_organiser.src.memory  Memory hit for arcade_adventure.lnk -> App (0.98)
+2026-04-12 22:22:53  INFO      desktop_organiser.src.observer  Scanning: C:\Users\namit\AppData\Local\Temp\pytest-of-namit\pytest-17\test_finds_normal_file0\Desktop
+2026-04-12 22:22:53  DEBUG     desktop_organiser.src.observer  Found: resume.pdf (12 bytes)
+2026-04-12 22:22:53  INFO      desktop_organiser.src.observer  Found 1 file(s)
+2026-04-12 22:22:53  INFO      desktop_organiser.src.observer  Scanning: C:\Users\namit\AppData\Local\Temp\pytest-of-namit\pytest-17\test_skips_hidden_files0\Desktop
+2026-04-12 22:22:53  DEBUG     desktop_organiser.src.observer  Skipping hidden file: .DS_Store
+2026-04-12 22:22:53  DEBUG     desktop_organiser.src.observer  Skipping hidden file: .hidden_config
+2026-04-12 22:22:53  DEBUG     desktop_organiser.src.observer  Found: visible.txt (7 bytes)
+2026-04-12 22:22:53  INFO      desktop_organiser.src.observer  Found 1 file(s)
+2026-04-12 22:22:53  INFO      desktop_organiser.src.observer  Scanning: C:\Users\namit\AppData\Local\Temp\pytest-of-namit\pytest-17\test_skips_system_files0\Desktop
+2026-04-12 22:22:53  DEBUG     desktop_organiser.src.observer  Skipping ignored name: desktop.ini
+2026-04-12 22:22:53  DEBUG     desktop_organiser.src.observer  Found: my_notes.txt (5 bytes)
+2026-04-12 22:22:53  DEBUG     desktop_organiser.src.observer  Skipping ignored name: Thumbs.db
+2026-04-12 22:22:53  INFO      desktop_organiser.src.observer  Found 1 file(s)
+2026-04-12 22:22:53  INFO      desktop_organiser.src.observer  Scanning: C:\Users\namit\AppData\Local\Temp\pytest-of-namit\pytest-17\test_skips_directories0\Desktop
+2026-04-12 22:22:53  DEBUG     desktop_organiser.src.observer  Found: my_file.txt (1 bytes)
+2026-04-12 22:22:53  DEBUG     desktop_organiser.src.observer  Skipping non-file: my_folder
+2026-04-12 22:22:53  INFO      desktop_organiser.src.observer  Found 1 file(s)
+2026-04-12 22:22:53  INFO      desktop_organiser.src.observer  Scanning: C:\Users\namit\AppData\Local\Temp\pytest-of-namit\pytest-17\test_returns_correct_metadata0\Desktop
+2026-04-12 22:22:53  DEBUG     desktop_organiser.src.observer  Found: report.pdf (11 bytes)
+2026-04-12 22:22:53  INFO      desktop_organiser.src.observer  Found 1 file(s)
+2026-04-12 22:22:53  INFO      desktop_organiser.src.observer  Scanning: C:\Users\namit\AppData\Local\Temp\pytest-of-namit\pytest-17\test_extension_is_lowercase0\Desktop
+2026-04-12 22:22:53  DEBUG     desktop_organiser.src.observer  Found: Photo.JPG (0 bytes)
+2026-04-12 22:22:53  INFO      desktop_organiser.src.observer  Found 1 file(s)
+2026-04-12 22:22:53  INFO      desktop_organiser.src.observer  Scanning: C:\Users\namit\AppData\Local\Temp\pytest-of-namit\pytest-17\test_empty_desktop_returns_emp0\Desktop
+2026-04-12 22:22:53  INFO      desktop_organiser.src.observer  Found 0 file(s)
+2026-04-12 22:22:53  WARNING   desktop_organiser.src.observer  Scan path does not exist: C:\Users\namit\AppData\Local\Temp\pytest-of-namit\pytest-17\test_nonexistent_desktop_retur0\DoesNotExist
+2026-04-12 22:22:53  INFO      desktop_organiser.src.observer  Scanning: C:\Users\namit\AppData\Local\Temp\pytest-of-namit\pytest-17\test_multiple_files_all_return0\Desktop
+2026-04-12 22:22:53  DEBUG     desktop_organiser.src.observer  Found: data.zip (1 bytes)
+2026-04-12 22:22:53  DEBUG     desktop_organiser.src.observer  Found: notes.txt (1 bytes)
+2026-04-12 22:22:53  DEBUG     desktop_organiser.src.observer  Found: photo.png (1 bytes)
+2026-04-12 22:22:53  DEBUG     desktop_organiser.src.observer  Found: script.py (1 bytes)
+2026-04-12 22:22:53  INFO      desktop_organiser.src.observer  Found 4 file(s)
+2026-04-12 22:22:53  INFO      desktop_organiser.src.observer  Scanning: C:\Users\namit\AppData\Local\Temp\pytest-of-namit\pytest-17\test_mixed_desktop_only_return0\Desktop
+2026-04-12 22:22:53  DEBUG     desktop_organiser.src.observer  Skipping hidden file: .DS_Store
+2026-04-12 22:22:53  DEBUG     desktop_organiser.src.observer  Found: app.py (1 bytes)
+2026-04-12 22:22:53  DEBUG     desktop_organiser.src.observer  Skipping ignored name: desktop.ini
+2026-04-12 22:22:53  DEBUG     desktop_organiser.src.observer  Found: essay.docx (1 bytes)
+2026-04-12 22:22:53  DEBUG     desktop_organiser.src.observer  Skipping non-file: some_folder
+2026-04-12 22:22:53  INFO      desktop_organiser.src.observer  Found 2 file(s)
+2026-04-12 22:23:42  DEBUG     desktop_organiser.src.classifier  Rule-based: resume.pdf → Documents (0.80)
+2026-04-12 22:23:42  DEBUG     desktop_organiser.src.classifier  Rule-based: app.py → Code (0.80)
+2026-04-12 22:23:42  DEBUG     desktop_organiser.src.classifier  Rule-based: photo.png → Images (0.80)
+2026-04-12 22:23:42  DEBUG     desktop_organiser.src.classifier  Rule-based: backup.zip → Archives (0.80)
+2026-04-12 22:23:42  DEBUG     desktop_organiser.src.classifier  Rule-based: setup.exe → Installers (0.80)
+2026-04-12 22:23:42  DEBUG     desktop_organiser.src.classifier  Rule-based: random.blob → Unknown (0.00)
+2026-04-12 22:23:42  DEBUG     desktop_organiser.src.classifier  Rule-based: resume.blob → Documents (0.20)
+2026-04-12 22:23:42  INFO      desktop_organiser.src.classifier  Classifying: resume.pdf
+2026-04-12 22:23:42  INFO      desktop_organiser.src.classifier  Classifying: app.py
+2026-04-12 22:23:42  INFO      desktop_organiser.src.classifier  LLM unavailable for app.py - falling back to rules
+2026-04-12 22:23:42  DEBUG     desktop_organiser.src.classifier  Rule-based: app.py → Code (0.80)
+2026-04-12 22:23:42  INFO      desktop_organiser.src.classifier  Classifying: random.blob
+2026-04-12 22:23:42  INFO      desktop_organiser.src.classifier  LLM unavailable for random.blob - falling back to rules
+2026-04-12 22:23:42  DEBUG     desktop_organiser.src.classifier  Rule-based: random.blob → Unknown (0.00)
+2026-04-12 22:23:42  INFO      desktop_organiser.src.classifier  Classifying: random.blob
+2026-04-12 22:23:42  INFO      desktop_organiser.src.classifier  Classifying: app.py
+2026-04-12 22:23:42  INFO      desktop_organiser.src.classifier  Classifying: app.py
+2026-04-12 22:23:42  INFO      desktop_organiser.src.memory  Saved correction: resume.pdf -> Documents
+2026-04-12 22:23:42  INFO      desktop_organiser.src.classifier  Classifying: resume.pdf
+2026-04-12 22:23:42  DEBUG     desktop_organiser.src.memory  Memory hit for resume.pdf -> Documents (0.98)
+2026-04-12 22:23:42  INFO      desktop_organiser.src.classifier  Memory hit for resume.pdf -> Documents
+2026-04-12 22:23:42  INFO      desktop_organiser.src.memory  New category created: 'Uni'
+2026-04-12 22:23:42  INFO      desktop_organiser.src.memory  Saved correction: resume.pdf -> Uni
+2026-04-12 22:23:42  INFO      desktop_organiser.src.classifier  Classifying: resume.pdf
+2026-04-12 22:23:42  DEBUG     desktop_organiser.src.memory  Memory hit for resume.pdf -> Uni (0.98)
+2026-04-12 22:23:42  INFO      desktop_organiser.src.classifier  Memory hit for resume.pdf -> Uni
+2026-04-12 22:23:42  INFO      desktop_organiser.src.classifier  Classifying: app.py
+2026-04-12 22:23:42  INFO      desktop_organiser.src.classifier  Classifying: app.py
+2026-04-12 22:23:42  INFO      desktop_organiser.src.classifier  LLM unavailable for app.py - falling back to rules
+2026-04-12 22:23:42  DEBUG     desktop_organiser.src.classifier  Rule-based: app.py → Code (0.80)
+2026-04-12 22:23:42  INFO      desktop_organiser.src.memory  New category created: 'App'
+2026-04-12 22:23:42  INFO      desktop_organiser.src.memory  Saved correction: arcade_adventure.lnk -> App
+2026-04-12 22:23:42  DEBUG     desktop_organiser.src.memory  Memory hit for arcade_adventure.lnk -> App (0.98)
+2026-04-12 22:23:42  INFO      desktop_organiser.src.memory  New category created: 'App'
+2026-04-12 22:23:42  INFO      desktop_organiser.src.memory  Saved correction: arcade_adventure.lnk -> App
+2026-04-12 22:23:42  DEBUG     desktop_organiser.src.memory  Memory hit for docker_desktop.lnk -> App (0.92)
+2026-04-12 22:23:42  INFO      desktop_organiser.src.memory  New category created: 'App'
+2026-04-12 22:23:42  INFO      desktop_organiser.src.memory  Saved correction: arcade_adventure.lnk -> App
+2026-04-12 22:23:42  INFO      desktop_organiser.src.memory  New category created: 'App'
+2026-04-12 22:23:42  INFO      desktop_organiser.src.memory  Saved correction: arcade_adventure.lnk -> App
+2026-04-12 22:23:42  DEBUG     desktop_organiser.src.memory  Memory hit for arcade_game.exe -> App (0.60)
+2026-04-12 22:23:42  INFO      desktop_organiser.src.memory  New category created: 'App'
+2026-04-12 22:23:42  INFO      desktop_organiser.src.memory  Saved correction: arcade_adventure.lnk -> App
+2026-04-12 22:23:42  INFO      desktop_organiser.src.memory  New category created: 'Shortcuts'
+2026-04-12 22:23:42  INFO      desktop_organiser.src.memory  Updated pattern for arcade_adventure.lnk -> Shortcuts
+2026-04-12 22:23:42  INFO      desktop_organiser.src.memory  New category created: 'App'
+2026-04-12 22:23:42  INFO      desktop_organiser.src.memory  Saved correction: arcade_adventure.lnk -> App
+2026-04-12 22:23:42  INFO      desktop_organiser.src.memory  New category created: 'Shortcuts'
+2026-04-12 22:23:42  INFO      desktop_organiser.src.memory  Updated pattern for arcade_adventure.lnk -> Shortcuts
+2026-04-12 22:23:42  INFO      desktop_organiser.src.memory  New category created: 'Uni'
+2026-04-12 22:23:42  INFO      desktop_organiser.src.memory  New category created: 'Uni'
+2026-04-12 22:23:42  INFO      desktop_organiser.src.memory  New category created: 'Newcategory'
+2026-04-12 22:23:42  INFO      desktop_organiser.src.memory  Saved correction: arcade_adventure.lnk -> NewCategory
+2026-04-12 22:23:42  DEBUG     desktop_organiser.src.memory  Memory hit for arcade_adventure.lnk -> NewCategory (0.98)
+2026-04-12 22:23:42  INFO      desktop_organiser.src.memory  New category created: 'App'
+2026-04-12 22:23:42  INFO      desktop_organiser.src.memory  Saved correction: arcade_adventure.lnk -> App
+2026-04-12 22:23:42  INFO      desktop_organiser.src.memory  New category created: 'Uni'
+2026-04-12 22:23:42  INFO      desktop_organiser.src.memory  Memory cleared
+2026-04-12 22:23:42  INFO      desktop_organiser.src.memory  New category created: 'App'
+2026-04-12 22:23:42  INFO      desktop_organiser.src.memory  Saved correction: arcade_adventure.lnk -> App
+2026-04-12 22:23:42  INFO      desktop_organiser.src.memory  Saved correction: data_pipeline.py -> Code
+2026-04-12 22:23:42  WARNING   desktop_organiser.src.memory  Could not load memory file C:\Users\namit\AppData\Local\Temp\pytest-of-namit\pytest-18\test_corrupted_json_handled_gr0\bad_memory.json: Expecting property name enclosed in double quotes: line 1 column 3 (char 2) - starting fresh
+2026-04-12 22:23:42  INFO      desktop_organiser.src.memory  New category created: 'App'
+2026-04-12 22:23:42  INFO      desktop_organiser.src.memory  Saved correction: arcade_adventure.lnk -> App
+2026-04-12 22:23:42  DEBUG     desktop_organiser.src.memory  Memory hit for arcade_adventure.lnk -> App (0.98)
+2026-04-12 22:23:42  INFO      desktop_organiser.src.memory  New category created: 'Shortcuts'
+2026-04-12 22:23:42  INFO      desktop_organiser.src.memory  Saved correction: other_app.lnk -> Shortcuts
+2026-04-12 22:23:42  INFO      desktop_organiser.src.memory  New category created: 'App'
+2026-04-12 22:23:42  INFO      desktop_organiser.src.memory  Saved correction: arcade_adventure.lnk -> App
+2026-04-12 22:23:42  DEBUG     desktop_organiser.src.memory  Memory hit for arcade_adventure.lnk -> App (0.98)
+2026-04-12 22:23:42  INFO      desktop_organiser.src.observer  Scanning: C:\Users\namit\AppData\Local\Temp\pytest-of-namit\pytest-18\test_finds_normal_file0\Desktop
+2026-04-12 22:23:42  DEBUG     desktop_organiser.src.observer  Found: resume.pdf (12 bytes)
+2026-04-12 22:23:42  INFO      desktop_organiser.src.observer  Found 1 file(s)
+2026-04-12 22:23:42  INFO      desktop_organiser.src.observer  Scanning: C:\Users\namit\AppData\Local\Temp\pytest-of-namit\pytest-18\test_skips_hidden_files0\Desktop
+2026-04-12 22:23:42  DEBUG     desktop_organiser.src.observer  Skipping hidden file: .DS_Store
+2026-04-12 22:23:42  DEBUG     desktop_organiser.src.observer  Skipping hidden file: .hidden_config
+2026-04-12 22:23:42  DEBUG     desktop_organiser.src.observer  Found: visible.txt (7 bytes)
+2026-04-12 22:23:42  INFO      desktop_organiser.src.observer  Found 1 file(s)
+2026-04-12 22:23:42  INFO      desktop_organiser.src.observer  Scanning: C:\Users\namit\AppData\Local\Temp\pytest-of-namit\pytest-18\test_skips_system_files0\Desktop
+2026-04-12 22:23:42  DEBUG     desktop_organiser.src.observer  Skipping ignored name: desktop.ini
+2026-04-12 22:23:42  DEBUG     desktop_organiser.src.observer  Found: my_notes.txt (5 bytes)
+2026-04-12 22:23:42  DEBUG     desktop_organiser.src.observer  Skipping ignored name: Thumbs.db
+2026-04-12 22:23:42  INFO      desktop_organiser.src.observer  Found 1 file(s)
+2026-04-12 22:23:42  INFO      desktop_organiser.src.observer  Scanning: C:\Users\namit\AppData\Local\Temp\pytest-of-namit\pytest-18\test_skips_directories0\Desktop
+2026-04-12 22:23:42  DEBUG     desktop_organiser.src.observer  Found: my_file.txt (1 bytes)
+2026-04-12 22:23:42  DEBUG     desktop_organiser.src.observer  Skipping non-file: my_folder
+2026-04-12 22:23:42  INFO      desktop_organiser.src.observer  Found 1 file(s)
+2026-04-12 22:23:42  INFO      desktop_organiser.src.observer  Scanning: C:\Users\namit\AppData\Local\Temp\pytest-of-namit\pytest-18\test_returns_correct_metadata0\Desktop
+2026-04-12 22:23:42  DEBUG     desktop_organiser.src.observer  Found: report.pdf (11 bytes)
+2026-04-12 22:23:42  INFO      desktop_organiser.src.observer  Found 1 file(s)
+2026-04-12 22:23:42  INFO      desktop_organiser.src.observer  Scanning: C:\Users\namit\AppData\Local\Temp\pytest-of-namit\pytest-18\test_extension_is_lowercase0\Desktop
+2026-04-12 22:23:42  DEBUG     desktop_organiser.src.observer  Found: Photo.JPG (0 bytes)
+2026-04-12 22:23:42  INFO      desktop_organiser.src.observer  Found 1 file(s)
+2026-04-12 22:23:42  INFO      desktop_organiser.src.observer  Scanning: C:\Users\namit\AppData\Local\Temp\pytest-of-namit\pytest-18\test_empty_desktop_returns_emp0\Desktop
+2026-04-12 22:23:42  INFO      desktop_organiser.src.observer  Found 0 file(s)
+2026-04-12 22:23:42  WARNING   desktop_organiser.src.observer  Scan path does not exist: C:\Users\namit\AppData\Local\Temp\pytest-of-namit\pytest-18\test_nonexistent_desktop_retur0\DoesNotExist
+2026-04-12 22:23:42  INFO      desktop_organiser.src.observer  Scanning: C:\Users\namit\AppData\Local\Temp\pytest-of-namit\pytest-18\test_multiple_files_all_return0\Desktop
+2026-04-12 22:23:42  DEBUG     desktop_organiser.src.observer  Found: data.zip (1 bytes)
+2026-04-12 22:23:42  DEBUG     desktop_organiser.src.observer  Found: notes.txt (1 bytes)
+2026-04-12 22:23:42  DEBUG     desktop_organiser.src.observer  Found: photo.png (1 bytes)
+2026-04-12 22:23:42  DEBUG     desktop_organiser.src.observer  Found: script.py (1 bytes)
+2026-04-12 22:23:42  INFO      desktop_organiser.src.observer  Found 4 file(s)
+2026-04-12 22:23:42  INFO      desktop_organiser.src.observer  Scanning: C:\Users\namit\AppData\Local\Temp\pytest-of-namit\pytest-18\test_mixed_desktop_only_return0\Desktop
+2026-04-12 22:23:42  DEBUG     desktop_organiser.src.observer  Skipping hidden file: .DS_Store
+2026-04-12 22:23:42  DEBUG     desktop_organiser.src.observer  Found: app.py (1 bytes)
+2026-04-12 22:23:42  DEBUG     desktop_organiser.src.observer  Skipping ignored name: desktop.ini
+2026-04-12 22:23:42  DEBUG     desktop_organiser.src.observer  Found: essay.docx (1 bytes)
+2026-04-12 22:23:42  DEBUG     desktop_organiser.src.observer  Skipping non-file: some_folder
+2026-04-12 22:23:42  INFO      desktop_organiser.src.observer  Found 2 file(s)
+2026-04-12 22:28:23  DEBUG     desktop_organiser.src.classifier  Rule-based: resume.pdf → Documents (0.80)
+2026-04-12 22:28:23  DEBUG     desktop_organiser.src.classifier  Rule-based: app.py → Code (0.80)
+2026-04-12 22:28:23  DEBUG     desktop_organiser.src.classifier  Rule-based: photo.png → Images (0.80)
+2026-04-12 22:28:23  DEBUG     desktop_organiser.src.classifier  Rule-based: backup.zip → Archives (0.80)
+2026-04-12 22:28:23  DEBUG     desktop_organiser.src.classifier  Rule-based: setup.exe → Installers (0.80)
+2026-04-12 22:28:23  DEBUG     desktop_organiser.src.classifier  Rule-based: random.blob → Unknown (0.00)
+2026-04-12 22:28:23  DEBUG     desktop_organiser.src.classifier  Rule-based: resume.blob → Documents (0.20)
+2026-04-12 22:28:23  INFO      desktop_organiser.src.memory  Saved correction: resume.pdf -> Documents
+2026-04-12 22:28:23  INFO      desktop_organiser.src.memory  New category created: 'Uni'
+2026-04-12 22:28:23  INFO      desktop_organiser.src.memory  Saved correction: resume.pdf -> Uni
+2026-04-12 22:28:23  INFO      desktop_organiser.src.memory  New category created: 'App'
+2026-04-12 22:28:23  INFO      desktop_organiser.src.memory  Saved correction: arcade_adventure.lnk -> App
+2026-04-12 22:28:23  DEBUG     desktop_organiser.src.memory  Memory hit for arcade_adventure.lnk -> App (0.98)
+2026-04-12 22:28:23  INFO      desktop_organiser.src.memory  New category created: 'App'
+2026-04-12 22:28:23  INFO      desktop_organiser.src.memory  Saved correction: arcade_adventure.lnk -> App
+2026-04-12 22:28:23  DEBUG     desktop_organiser.src.memory  Memory hit for docker_desktop.lnk -> App (0.92)
+2026-04-12 22:28:23  INFO      desktop_organiser.src.memory  New category created: 'App'
+2026-04-12 22:28:23  INFO      desktop_organiser.src.memory  Saved correction: arcade_adventure.lnk -> App
+2026-04-12 22:28:23  INFO      desktop_organiser.src.memory  New category created: 'App'
+2026-04-12 22:28:23  INFO      desktop_organiser.src.memory  Saved correction: arcade_adventure.lnk -> App
+2026-04-12 22:28:23  DEBUG     desktop_organiser.src.memory  Memory hit for arcade_game.exe -> App (0.60)
+2026-04-12 22:28:23  INFO      desktop_organiser.src.memory  New category created: 'App'
+2026-04-12 22:28:23  INFO      desktop_organiser.src.memory  Saved correction: arcade_adventure.lnk -> App
+2026-04-12 22:28:23  INFO      desktop_organiser.src.memory  New category created: 'Shortcuts'
+2026-04-12 22:28:23  INFO      desktop_organiser.src.memory  Updated pattern for arcade_adventure.lnk -> Shortcuts
+2026-04-12 22:28:23  INFO      desktop_organiser.src.memory  New category created: 'App'
+2026-04-12 22:28:23  INFO      desktop_organiser.src.memory  Saved correction: arcade_adventure.lnk -> App
+2026-04-12 22:28:23  INFO      desktop_organiser.src.memory  New category created: 'Shortcuts'
+2026-04-12 22:28:23  INFO      desktop_organiser.src.memory  Updated pattern for arcade_adventure.lnk -> Shortcuts
+2026-04-12 22:28:23  INFO      desktop_organiser.src.memory  New category created: 'Uni'
+2026-04-12 22:28:23  INFO      desktop_organiser.src.memory  New category created: 'Uni'
+2026-04-12 22:28:23  INFO      desktop_organiser.src.memory  New category created: 'Newcategory'
+2026-04-12 22:28:23  INFO      desktop_organiser.src.memory  Saved correction: arcade_adventure.lnk -> NewCategory
+2026-04-12 22:28:23  DEBUG     desktop_organiser.src.memory  Memory hit for arcade_adventure.lnk -> NewCategory (0.98)
+2026-04-12 22:28:23  INFO      desktop_organiser.src.memory  New category created: 'App'
+2026-04-12 22:28:23  INFO      desktop_organiser.src.memory  Saved correction: arcade_adventure.lnk -> App
+2026-04-12 22:28:23  INFO      desktop_organiser.src.memory  New category created: 'Uni'
+2026-04-12 22:28:23  INFO      desktop_organiser.src.memory  Memory cleared
+2026-04-12 22:28:23  INFO      desktop_organiser.src.memory  New category created: 'App'
+2026-04-12 22:28:23  INFO      desktop_organiser.src.memory  Saved correction: arcade_adventure.lnk -> App
+2026-04-12 22:28:23  INFO      desktop_organiser.src.memory  Saved correction: data_pipeline.py -> Code
+2026-04-12 22:28:23  WARNING   desktop_organiser.src.memory  Could not load memory file C:\Users\namit\AppData\Local\Temp\pytest-of-namit\pytest-19\test_corrupted_json_handled_gr0\bad_memory.json: Expecting property name enclosed in double quotes: line 1 column 3 (char 2) - starting fresh
+2026-04-12 22:28:23  INFO      desktop_organiser.src.memory  New category created: 'App'
+2026-04-12 22:28:23  INFO      desktop_organiser.src.memory  Saved correction: arcade_adventure.lnk -> App
+2026-04-12 22:28:23  DEBUG     desktop_organiser.src.memory  Memory hit for arcade_adventure.lnk -> App (0.98)
+2026-04-12 22:28:23  INFO      desktop_organiser.src.memory  New category created: 'Shortcuts'
+2026-04-12 22:28:23  INFO      desktop_organiser.src.memory  Saved correction: other_app.lnk -> Shortcuts
+2026-04-12 22:28:23  INFO      desktop_organiser.src.memory  New category created: 'App'
+2026-04-12 22:28:23  INFO      desktop_organiser.src.memory  Saved correction: arcade_adventure.lnk -> App
+2026-04-12 22:28:23  DEBUG     desktop_organiser.src.memory  Memory hit for arcade_adventure.lnk -> App (0.98)
+2026-04-12 22:28:23  INFO      desktop_organiser.src.observer  Scanning: C:\Users\namit\AppData\Local\Temp\pytest-of-namit\pytest-19\test_finds_normal_file0\Desktop
+2026-04-12 22:28:23  DEBUG     desktop_organiser.src.observer  Found: resume.pdf (12 bytes)
+2026-04-12 22:28:23  INFO      desktop_organiser.src.observer  Found 1 file(s)
+2026-04-12 22:28:23  INFO      desktop_organiser.src.observer  Scanning: C:\Users\namit\AppData\Local\Temp\pytest-of-namit\pytest-19\test_skips_hidden_files0\Desktop
+2026-04-12 22:28:23  DEBUG     desktop_organiser.src.observer  Skipping hidden file: .DS_Store
+2026-04-12 22:28:23  DEBUG     desktop_organiser.src.observer  Skipping hidden file: .hidden_config
+2026-04-12 22:28:23  DEBUG     desktop_organiser.src.observer  Found: visible.txt (7 bytes)
+2026-04-12 22:28:23  INFO      desktop_organiser.src.observer  Found 1 file(s)
+2026-04-12 22:28:23  INFO      desktop_organiser.src.observer  Scanning: C:\Users\namit\AppData\Local\Temp\pytest-of-namit\pytest-19\test_skips_system_files0\Desktop
+2026-04-12 22:28:23  DEBUG     desktop_organiser.src.observer  Skipping ignored name: desktop.ini
+2026-04-12 22:28:23  DEBUG     desktop_organiser.src.observer  Found: my_notes.txt (5 bytes)
+2026-04-12 22:28:23  DEBUG     desktop_organiser.src.observer  Skipping ignored name: Thumbs.db
+2026-04-12 22:28:23  INFO      desktop_organiser.src.observer  Found 1 file(s)
+2026-04-12 22:28:23  INFO      desktop_organiser.src.observer  Scanning: C:\Users\namit\AppData\Local\Temp\pytest-of-namit\pytest-19\test_skips_directories0\Desktop
+2026-04-12 22:28:23  DEBUG     desktop_organiser.src.observer  Found: my_file.txt (1 bytes)
+2026-04-12 22:28:23  DEBUG     desktop_organiser.src.observer  Skipping non-file: my_folder
+2026-04-12 22:28:23  INFO      desktop_organiser.src.observer  Found 1 file(s)
+2026-04-12 22:28:23  INFO      desktop_organiser.src.observer  Scanning: C:\Users\namit\AppData\Local\Temp\pytest-of-namit\pytest-19\test_returns_correct_metadata0\Desktop
+2026-04-12 22:28:23  DEBUG     desktop_organiser.src.observer  Found: report.pdf (11 bytes)
+2026-04-12 22:28:23  INFO      desktop_organiser.src.observer  Found 1 file(s)
+2026-04-12 22:28:23  INFO      desktop_organiser.src.observer  Scanning: C:\Users\namit\AppData\Local\Temp\pytest-of-namit\pytest-19\test_extension_is_lowercase0\Desktop
+2026-04-12 22:28:23  DEBUG     desktop_organiser.src.observer  Found: Photo.JPG (0 bytes)
+2026-04-12 22:28:23  INFO      desktop_organiser.src.observer  Found 1 file(s)
+2026-04-12 22:28:23  INFO      desktop_organiser.src.observer  Scanning: C:\Users\namit\AppData\Local\Temp\pytest-of-namit\pytest-19\test_empty_desktop_returns_emp0\Desktop
+2026-04-12 22:28:23  INFO      desktop_organiser.src.observer  Found 0 file(s)
+2026-04-12 22:28:23  WARNING   desktop_organiser.src.observer  Scan path does not exist: C:\Users\namit\AppData\Local\Temp\pytest-of-namit\pytest-19\test_nonexistent_desktop_retur0\DoesNotExist
+2026-04-12 22:28:23  INFO      desktop_organiser.src.observer  Scanning: C:\Users\namit\AppData\Local\Temp\pytest-of-namit\pytest-19\test_multiple_files_all_return0\Desktop
+2026-04-12 22:28:23  DEBUG     desktop_organiser.src.observer  Found: data.zip (1 bytes)
+2026-04-12 22:28:23  DEBUG     desktop_organiser.src.observer  Found: notes.txt (1 bytes)
+2026-04-12 22:28:23  DEBUG     desktop_organiser.src.observer  Found: photo.png (1 bytes)
+2026-04-12 22:28:23  DEBUG     desktop_organiser.src.observer  Found: script.py (1 bytes)
+2026-04-12 22:28:23  INFO      desktop_organiser.src.observer  Found 4 file(s)
+2026-04-12 22:28:23  INFO      desktop_organiser.src.observer  Scanning: C:\Users\namit\AppData\Local\Temp\pytest-of-namit\pytest-19\test_mixed_desktop_only_return0\Desktop
+2026-04-12 22:28:23  DEBUG     desktop_organiser.src.observer  Skipping hidden file: .DS_Store
+2026-04-12 22:28:23  DEBUG     desktop_organiser.src.observer  Found: app.py (1 bytes)
+2026-04-12 22:28:23  DEBUG     desktop_organiser.src.observer  Skipping ignored name: desktop.ini
+2026-04-12 22:28:23  DEBUG     desktop_organiser.src.observer  Found: essay.docx (1 bytes)
+2026-04-12 22:28:23  DEBUG     desktop_organiser.src.observer  Skipping non-file: some_folder
+2026-04-12 22:28:23  INFO      desktop_organiser.src.observer  Found 2 file(s)
+2026-04-12 22:32:39  DEBUG     desktop_organiser.src.classifier  Rule-based: resume.pdf → Documents (0.80)
+2026-04-12 22:32:39  DEBUG     desktop_organiser.src.classifier  Rule-based: app.py → Code (0.80)
+2026-04-12 22:32:39  DEBUG     desktop_organiser.src.classifier  Rule-based: photo.png → Images (0.80)
+2026-04-12 22:32:39  DEBUG     desktop_organiser.src.classifier  Rule-based: backup.zip → Archives (0.80)
+2026-04-12 22:32:39  DEBUG     desktop_organiser.src.classifier  Rule-based: setup.exe → Installers (0.80)
+2026-04-12 22:32:39  DEBUG     desktop_organiser.src.classifier  Rule-based: random.blob → Unknown (0.00)
+2026-04-12 22:32:39  DEBUG     desktop_organiser.src.classifier  Rule-based: resume.blob → Documents (0.20)
+2026-04-12 22:32:39  DEBUG     desktop_organiser.src.classifier  Rule-based: app.py → Code (0.80)
+2026-04-12 22:32:39  DEBUG     desktop_organiser.src.classifier  Rule-based: random.blob → Unknown (0.00)
+2026-04-12 22:32:40  INFO      desktop_organiser.src.memory  Saved correction: resume.pdf -> Documents
+2026-04-12 22:32:40  DEBUG     desktop_organiser.src.memory  Memory hit for resume.pdf -> Documents (0.98)
+2026-04-12 22:32:40  INFO      desktop_organiser.src.memory  New category created: 'Uni'
+2026-04-12 22:32:40  INFO      desktop_organiser.src.memory  Saved correction: resume.pdf -> Uni
+2026-04-12 22:32:40  DEBUG     desktop_organiser.src.memory  Memory hit for resume.pdf -> Uni (0.98)
+2026-04-12 22:32:40  DEBUG     desktop_organiser.src.classifier  Rule-based: app.py → Code (0.80)
+2026-04-12 22:32:40  INFO      desktop_organiser.src.memory  New category created: 'App'
+2026-04-12 22:32:40  INFO      desktop_organiser.src.memory  Saved correction: arcade_adventure.lnk -> App
+2026-04-12 22:32:40  DEBUG     desktop_organiser.src.memory  Memory hit for arcade_adventure.lnk -> App (0.98)
+2026-04-12 22:32:40  INFO      desktop_organiser.src.memory  New category created: 'App'
+2026-04-12 22:32:40  INFO      desktop_organiser.src.memory  Saved correction: arcade_adventure.lnk -> App
+2026-04-12 22:32:40  DEBUG     desktop_organiser.src.memory  Memory hit for docker_desktop.lnk -> App (0.92)
+2026-04-12 22:32:40  INFO      desktop_organiser.src.memory  New category created: 'App'
+2026-04-12 22:32:40  INFO      desktop_organiser.src.memory  Saved correction: arcade_adventure.lnk -> App
+2026-04-12 22:32:40  INFO      desktop_organiser.src.memory  New category created: 'App'
+2026-04-12 22:32:40  INFO      desktop_organiser.src.memory  Saved correction: arcade_adventure.lnk -> App
+2026-04-12 22:32:40  DEBUG     desktop_organiser.src.memory  Memory hit for arcade_game.exe -> App (0.60)
+2026-04-12 22:32:40  INFO      desktop_organiser.src.memory  New category created: 'App'
+2026-04-12 22:32:40  INFO      desktop_organiser.src.memory  Saved correction: arcade_adventure.lnk -> App
+2026-04-12 22:32:40  INFO      desktop_organiser.src.memory  New category created: 'Shortcuts'
+2026-04-12 22:32:40  INFO      desktop_organiser.src.memory  Updated pattern for arcade_adventure.lnk -> Shortcuts
+2026-04-12 22:32:40  INFO      desktop_organiser.src.memory  New category created: 'App'
+2026-04-12 22:32:40  INFO      desktop_organiser.src.memory  Saved correction: arcade_adventure.lnk -> App
+2026-04-12 22:32:40  INFO      desktop_organiser.src.memory  New category created: 'Shortcuts'
+2026-04-12 22:32:40  INFO      desktop_organiser.src.memory  Updated pattern for arcade_adventure.lnk -> Shortcuts
+2026-04-12 22:32:40  INFO      desktop_organiser.src.memory  New category created: 'Uni'
+2026-04-12 22:32:40  INFO      desktop_organiser.src.memory  New category created: 'Uni'
+2026-04-12 22:32:40  INFO      desktop_organiser.src.memory  New category created: 'Newcategory'
+2026-04-12 22:32:40  INFO      desktop_organiser.src.memory  Saved correction: arcade_adventure.lnk -> NewCategory
+2026-04-12 22:32:40  DEBUG     desktop_organiser.src.memory  Memory hit for arcade_adventure.lnk -> NewCategory (0.98)
+2026-04-12 22:32:40  INFO      desktop_organiser.src.memory  New category created: 'App'
+2026-04-12 22:32:40  INFO      desktop_organiser.src.memory  Saved correction: arcade_adventure.lnk -> App
+2026-04-12 22:32:40  INFO      desktop_organiser.src.memory  New category created: 'Uni'
+2026-04-12 22:32:40  INFO      desktop_organiser.src.memory  Memory cleared
+2026-04-12 22:32:40  INFO      desktop_organiser.src.memory  New category created: 'App'
+2026-04-12 22:32:40  INFO      desktop_organiser.src.memory  Saved correction: arcade_adventure.lnk -> App
+2026-04-12 22:32:40  INFO      desktop_organiser.src.memory  Saved correction: data_pipeline.py -> Code
+2026-04-12 22:32:40  WARNING   desktop_organiser.src.memory  Could not load memory file C:\Users\namit\AppData\Local\Temp\pytest-of-namit\pytest-20\test_corrupted_json_handled_gr0\bad_memory.json: Expecting property name enclosed in double quotes: line 1 column 3 (char 2) - starting fresh
+2026-04-12 22:32:40  INFO      desktop_organiser.src.memory  New category created: 'App'
+2026-04-12 22:32:40  INFO      desktop_organiser.src.memory  Saved correction: arcade_adventure.lnk -> App
+2026-04-12 22:32:40  DEBUG     desktop_organiser.src.memory  Memory hit for arcade_adventure.lnk -> App (0.98)
+2026-04-12 22:32:40  INFO      desktop_organiser.src.memory  New category created: 'Shortcuts'
+2026-04-12 22:32:40  INFO      desktop_organiser.src.memory  Saved correction: other_app.lnk -> Shortcuts
+2026-04-12 22:32:40  INFO      desktop_organiser.src.memory  New category created: 'App'
+2026-04-12 22:32:40  INFO      desktop_organiser.src.memory  Saved correction: arcade_adventure.lnk -> App
+2026-04-12 22:32:40  DEBUG     desktop_organiser.src.memory  Memory hit for arcade_adventure.lnk -> App (0.98)
+2026-04-12 22:32:40  INFO      desktop_organiser.src.observer  Scanning: C:\Users\namit\AppData\Local\Temp\pytest-of-namit\pytest-20\test_finds_normal_file0\Desktop
+2026-04-12 22:32:40  DEBUG     desktop_organiser.src.observer  Found: resume.pdf (12 bytes)
+2026-04-12 22:32:40  INFO      desktop_organiser.src.observer  Found 1 file(s)
+2026-04-12 22:32:40  INFO      desktop_organiser.src.observer  Scanning: C:\Users\namit\AppData\Local\Temp\pytest-of-namit\pytest-20\test_skips_hidden_files0\Desktop
+2026-04-12 22:32:40  DEBUG     desktop_organiser.src.observer  Skipping hidden file: .DS_Store
+2026-04-12 22:32:40  DEBUG     desktop_organiser.src.observer  Skipping hidden file: .hidden_config
+2026-04-12 22:32:40  DEBUG     desktop_organiser.src.observer  Found: visible.txt (7 bytes)
+2026-04-12 22:32:40  INFO      desktop_organiser.src.observer  Found 1 file(s)
+2026-04-12 22:32:40  INFO      desktop_organiser.src.observer  Scanning: C:\Users\namit\AppData\Local\Temp\pytest-of-namit\pytest-20\test_skips_system_files0\Desktop
+2026-04-12 22:32:40  DEBUG     desktop_organiser.src.observer  Skipping ignored name: desktop.ini
+2026-04-12 22:32:40  DEBUG     desktop_organiser.src.observer  Found: my_notes.txt (5 bytes)
+2026-04-12 22:32:40  DEBUG     desktop_organiser.src.observer  Skipping ignored name: Thumbs.db
+2026-04-12 22:32:40  INFO      desktop_organiser.src.observer  Found 1 file(s)
+2026-04-12 22:32:40  INFO      desktop_organiser.src.observer  Scanning: C:\Users\namit\AppData\Local\Temp\pytest-of-namit\pytest-20\test_skips_directories0\Desktop
+2026-04-12 22:32:40  DEBUG     desktop_organiser.src.observer  Found: my_file.txt (1 bytes)
+2026-04-12 22:32:40  DEBUG     desktop_organiser.src.observer  Skipping non-file: my_folder
+2026-04-12 22:32:40  INFO      desktop_organiser.src.observer  Found 1 file(s)
+2026-04-12 22:32:40  INFO      desktop_organiser.src.observer  Scanning: C:\Users\namit\AppData\Local\Temp\pytest-of-namit\pytest-20\test_returns_correct_metadata0\Desktop
+2026-04-12 22:32:40  DEBUG     desktop_organiser.src.observer  Found: report.pdf (11 bytes)
+2026-04-12 22:32:40  INFO      desktop_organiser.src.observer  Found 1 file(s)
+2026-04-12 22:32:40  INFO      desktop_organiser.src.observer  Scanning: C:\Users\namit\AppData\Local\Temp\pytest-of-namit\pytest-20\test_extension_is_lowercase0\Desktop
+2026-04-12 22:32:40  DEBUG     desktop_organiser.src.observer  Found: Photo.JPG (0 bytes)
+2026-04-12 22:32:40  INFO      desktop_organiser.src.observer  Found 1 file(s)
+2026-04-12 22:32:40  INFO      desktop_organiser.src.observer  Scanning: C:\Users\namit\AppData\Local\Temp\pytest-of-namit\pytest-20\test_empty_desktop_returns_emp0\Desktop
+2026-04-12 22:32:40  INFO      desktop_organiser.src.observer  Found 0 file(s)
+2026-04-12 22:32:40  WARNING   desktop_organiser.src.observer  Scan path does not exist: C:\Users\namit\AppData\Local\Temp\pytest-of-namit\pytest-20\test_nonexistent_desktop_retur0\DoesNotExist
+2026-04-12 22:32:40  INFO      desktop_organiser.src.observer  Scanning: C:\Users\namit\AppData\Local\Temp\pytest-of-namit\pytest-20\test_multiple_files_all_return0\Desktop
+2026-04-12 22:32:40  DEBUG     desktop_organiser.src.observer  Found: data.zip (1 bytes)
+2026-04-12 22:32:40  DEBUG     desktop_organiser.src.observer  Found: notes.txt (1 bytes)
+2026-04-12 22:32:40  DEBUG     desktop_organiser.src.observer  Found: photo.png (1 bytes)
+2026-04-12 22:32:40  DEBUG     desktop_organiser.src.observer  Found: script.py (1 bytes)
+2026-04-12 22:32:40  INFO      desktop_organiser.src.observer  Found 4 file(s)
+2026-04-12 22:32:40  INFO      desktop_organiser.src.observer  Scanning: C:\Users\namit\AppData\Local\Temp\pytest-of-namit\pytest-20\test_mixed_desktop_only_return0\Desktop
+2026-04-12 22:32:40  DEBUG     desktop_organiser.src.observer  Skipping hidden file: .DS_Store
+2026-04-12 22:32:40  DEBUG     desktop_organiser.src.observer  Found: app.py (1 bytes)
+2026-04-12 22:32:40  DEBUG     desktop_organiser.src.observer  Skipping ignored name: desktop.ini
+2026-04-12 22:32:40  DEBUG     desktop_organiser.src.observer  Found: essay.docx (1 bytes)
+2026-04-12 22:32:40  DEBUG     desktop_organiser.src.observer  Skipping non-file: some_folder
+2026-04-12 22:32:40  INFO      desktop_organiser.src.observer  Found 2 file(s)
+2026-04-12 22:34:00  DEBUG     desktop_organiser.src.classifier  Rule-based: resume.pdf → Documents (0.80)
+2026-04-12 22:34:00  DEBUG     desktop_organiser.src.classifier  Rule-based: app.py → Code (0.80)
+2026-04-12 22:34:00  DEBUG     desktop_organiser.src.classifier  Rule-based: photo.png → Images (0.80)
+2026-04-12 22:34:00  DEBUG     desktop_organiser.src.classifier  Rule-based: backup.zip → Archives (0.80)
+2026-04-12 22:34:00  DEBUG     desktop_organiser.src.classifier  Rule-based: setup.exe → Installers (0.80)
+2026-04-12 22:34:00  DEBUG     desktop_organiser.src.classifier  Rule-based: random.blob → Unknown (0.00)
+2026-04-12 22:34:00  DEBUG     desktop_organiser.src.classifier  Rule-based: resume.blob → Documents (0.20)
+2026-04-12 22:34:00  WARNING   desktop_organiser.src.classifier  Correcting invalid LLM category 'MadeUpCategory' → Unknown
+2026-04-12 22:34:00  INFO      desktop_organiser.src.memory  Saved correction: resume.pdf -> Documents
+2026-04-12 22:34:00  DEBUG     desktop_organiser.src.memory  Memory hit for resume.pdf -> Documents (0.98)
+2026-04-12 22:34:00  INFO      desktop_organiser.src.memory  New category created: 'Uni'
+2026-04-12 22:34:00  INFO      desktop_organiser.src.memory  Saved correction: resume.pdf -> Uni
+2026-04-12 22:34:00  DEBUG     desktop_organiser.src.memory  Memory hit for resume.pdf -> Uni (0.98)
+2026-04-12 22:34:00  INFO      desktop_organiser.src.memory  New category created: 'App'
+2026-04-12 22:34:00  INFO      desktop_organiser.src.memory  Saved correction: arcade_adventure.lnk -> App
+2026-04-12 22:34:00  DEBUG     desktop_organiser.src.memory  Memory hit for arcade_adventure.lnk -> App (0.98)
+2026-04-12 22:34:00  INFO      desktop_organiser.src.memory  New category created: 'App'
+2026-04-12 22:34:00  INFO      desktop_organiser.src.memory  Saved correction: arcade_adventure.lnk -> App
+2026-04-12 22:34:00  DEBUG     desktop_organiser.src.memory  Memory hit for docker_desktop.lnk -> App (0.92)
+2026-04-12 22:34:00  INFO      desktop_organiser.src.memory  New category created: 'App'
+2026-04-12 22:34:00  INFO      desktop_organiser.src.memory  Saved correction: arcade_adventure.lnk -> App
+2026-04-12 22:34:00  INFO      desktop_organiser.src.memory  New category created: 'App'
+2026-04-12 22:34:00  INFO      desktop_organiser.src.memory  Saved correction: arcade_adventure.lnk -> App
+2026-04-12 22:34:00  DEBUG     desktop_organiser.src.memory  Memory hit for arcade_game.exe -> App (0.60)
+2026-04-12 22:34:00  INFO      desktop_organiser.src.memory  New category created: 'App'
+2026-04-12 22:34:00  INFO      desktop_organiser.src.memory  Saved correction: arcade_adventure.lnk -> App
+2026-04-12 22:34:00  INFO      desktop_organiser.src.memory  New category created: 'Shortcuts'
+2026-04-12 22:34:00  INFO      desktop_organiser.src.memory  Updated pattern for arcade_adventure.lnk -> Shortcuts
+2026-04-12 22:34:00  INFO      desktop_organiser.src.memory  New category created: 'App'
+2026-04-12 22:34:00  INFO      desktop_organiser.src.memory  Saved correction: arcade_adventure.lnk -> App
+2026-04-12 22:34:00  INFO      desktop_organiser.src.memory  New category created: 'Shortcuts'
+2026-04-12 22:34:00  INFO      desktop_organiser.src.memory  Updated pattern for arcade_adventure.lnk -> Shortcuts
+2026-04-12 22:34:00  INFO      desktop_organiser.src.memory  New category created: 'Uni'
+2026-04-12 22:34:00  INFO      desktop_organiser.src.memory  New category created: 'Uni'
+2026-04-12 22:34:00  INFO      desktop_organiser.src.memory  New category created: 'Newcategory'
+2026-04-12 22:34:00  INFO      desktop_organiser.src.memory  Saved correction: arcade_adventure.lnk -> NewCategory
+2026-04-12 22:34:00  DEBUG     desktop_organiser.src.memory  Memory hit for arcade_adventure.lnk -> NewCategory (0.98)
+2026-04-12 22:34:00  INFO      desktop_organiser.src.memory  New category created: 'App'
+2026-04-12 22:34:00  INFO      desktop_organiser.src.memory  Saved correction: arcade_adventure.lnk -> App
+2026-04-12 22:34:00  INFO      desktop_organiser.src.memory  New category created: 'Uni'
+2026-04-12 22:34:00  INFO      desktop_organiser.src.memory  Memory cleared
+2026-04-12 22:34:00  INFO      desktop_organiser.src.memory  New category created: 'App'
+2026-04-12 22:34:00  INFO      desktop_organiser.src.memory  Saved correction: arcade_adventure.lnk -> App
+2026-04-12 22:34:00  INFO      desktop_organiser.src.memory  Saved correction: data_pipeline.py -> Code
+2026-04-12 22:34:00  WARNING   desktop_organiser.src.memory  Could not load memory file C:\Users\namit\AppData\Local\Temp\pytest-of-namit\pytest-21\test_corrupted_json_handled_gr0\bad_memory.json: Expecting property name enclosed in double quotes: line 1 column 3 (char 2) - starting fresh
+2026-04-12 22:34:00  INFO      desktop_organiser.src.memory  New category created: 'App'
+2026-04-12 22:34:00  INFO      desktop_organiser.src.memory  Saved correction: arcade_adventure.lnk -> App
+2026-04-12 22:34:00  DEBUG     desktop_organiser.src.memory  Memory hit for arcade_adventure.lnk -> App (0.98)
+2026-04-12 22:34:00  INFO      desktop_organiser.src.memory  New category created: 'Shortcuts'
+2026-04-12 22:34:00  INFO      desktop_organiser.src.memory  Saved correction: other_app.lnk -> Shortcuts
+2026-04-12 22:34:00  INFO      desktop_organiser.src.memory  New category created: 'App'
+2026-04-12 22:34:00  INFO      desktop_organiser.src.memory  Saved correction: arcade_adventure.lnk -> App
+2026-04-12 22:34:00  DEBUG     desktop_organiser.src.memory  Memory hit for arcade_adventure.lnk -> App (0.98)
+2026-04-12 22:34:00  INFO      desktop_organiser.src.observer  Scanning: C:\Users\namit\AppData\Local\Temp\pytest-of-namit\pytest-21\test_finds_normal_file0\Desktop
+2026-04-12 22:34:00  DEBUG     desktop_organiser.src.observer  Found: resume.pdf (12 bytes)
+2026-04-12 22:34:00  INFO      desktop_organiser.src.observer  Found 1 file(s)
+2026-04-12 22:34:00  INFO      desktop_organiser.src.observer  Scanning: C:\Users\namit\AppData\Local\Temp\pytest-of-namit\pytest-21\test_skips_hidden_files0\Desktop
+2026-04-12 22:34:00  DEBUG     desktop_organiser.src.observer  Skipping hidden file: .DS_Store
+2026-04-12 22:34:00  DEBUG     desktop_organiser.src.observer  Skipping hidden file: .hidden_config
+2026-04-12 22:34:00  DEBUG     desktop_organiser.src.observer  Found: visible.txt (7 bytes)
+2026-04-12 22:34:00  INFO      desktop_organiser.src.observer  Found 1 file(s)
+2026-04-12 22:34:00  INFO      desktop_organiser.src.observer  Scanning: C:\Users\namit\AppData\Local\Temp\pytest-of-namit\pytest-21\test_skips_system_files0\Desktop
+2026-04-12 22:34:00  DEBUG     desktop_organiser.src.observer  Skipping ignored name: desktop.ini
+2026-04-12 22:34:00  DEBUG     desktop_organiser.src.observer  Found: my_notes.txt (5 bytes)
+2026-04-12 22:34:00  DEBUG     desktop_organiser.src.observer  Skipping ignored name: Thumbs.db
+2026-04-12 22:34:00  INFO      desktop_organiser.src.observer  Found 1 file(s)
+2026-04-12 22:34:00  INFO      desktop_organiser.src.observer  Scanning: C:\Users\namit\AppData\Local\Temp\pytest-of-namit\pytest-21\test_skips_directories0\Desktop
+2026-04-12 22:34:00  DEBUG     desktop_organiser.src.observer  Found: my_file.txt (1 bytes)
+2026-04-12 22:34:00  DEBUG     desktop_organiser.src.observer  Skipping non-file: my_folder
+2026-04-12 22:34:00  INFO      desktop_organiser.src.observer  Found 1 file(s)
+2026-04-12 22:34:00  INFO      desktop_organiser.src.observer  Scanning: C:\Users\namit\AppData\Local\Temp\pytest-of-namit\pytest-21\test_returns_correct_metadata0\Desktop
+2026-04-12 22:34:00  DEBUG     desktop_organiser.src.observer  Found: report.pdf (11 bytes)
+2026-04-12 22:34:00  INFO      desktop_organiser.src.observer  Found 1 file(s)
+2026-04-12 22:34:00  INFO      desktop_organiser.src.observer  Scanning: C:\Users\namit\AppData\Local\Temp\pytest-of-namit\pytest-21\test_extension_is_lowercase0\Desktop
+2026-04-12 22:34:00  DEBUG     desktop_organiser.src.observer  Found: Photo.JPG (0 bytes)
+2026-04-12 22:34:00  INFO      desktop_organiser.src.observer  Found 1 file(s)
+2026-04-12 22:34:00  INFO      desktop_organiser.src.observer  Scanning: C:\Users\namit\AppData\Local\Temp\pytest-of-namit\pytest-21\test_empty_desktop_returns_emp0\Desktop
+2026-04-12 22:34:00  INFO      desktop_organiser.src.observer  Found 0 file(s)
+2026-04-12 22:34:00  WARNING   desktop_organiser.src.observer  Scan path does not exist: C:\Users\namit\AppData\Local\Temp\pytest-of-namit\pytest-21\test_nonexistent_desktop_retur0\DoesNotExist
+2026-04-12 22:34:00  INFO      desktop_organiser.src.observer  Scanning: C:\Users\namit\AppData\Local\Temp\pytest-of-namit\pytest-21\test_multiple_files_all_return0\Desktop
+2026-04-12 22:34:00  DEBUG     desktop_organiser.src.observer  Found: data.zip (1 bytes)
+2026-04-12 22:34:00  DEBUG     desktop_organiser.src.observer  Found: notes.txt (1 bytes)
+2026-04-12 22:34:00  DEBUG     desktop_organiser.src.observer  Found: photo.png (1 bytes)
+2026-04-12 22:34:00  DEBUG     desktop_organiser.src.observer  Found: script.py (1 bytes)
+2026-04-12 22:34:00  INFO      desktop_organiser.src.observer  Found 4 file(s)
+2026-04-12 22:34:01  INFO      desktop_organiser.src.observer  Scanning: C:\Users\namit\AppData\Local\Temp\pytest-of-namit\pytest-21\test_mixed_desktop_only_return0\Desktop
+2026-04-12 22:34:01  DEBUG     desktop_organiser.src.observer  Skipping hidden file: .DS_Store
+2026-04-12 22:34:01  DEBUG     desktop_organiser.src.observer  Found: app.py (1 bytes)
+2026-04-12 22:34:01  DEBUG     desktop_organiser.src.observer  Skipping ignored name: desktop.ini
+2026-04-12 22:34:01  DEBUG     desktop_organiser.src.observer  Found: essay.docx (1 bytes)
+2026-04-12 22:34:01  DEBUG     desktop_organiser.src.observer  Skipping non-file: some_folder
+2026-04-12 22:34:01  INFO      desktop_organiser.src.observer  Found 2 file(s)
+2026-04-12 22:34:56  DEBUG     desktop_organiser.src.classifier  Rule-based: resume.pdf → Documents (0.80)
+2026-04-12 22:34:56  DEBUG     desktop_organiser.src.classifier  Rule-based: app.py → Code (0.80)
+2026-04-12 22:34:56  DEBUG     desktop_organiser.src.classifier  Rule-based: photo.png → Images (0.80)
+2026-04-12 22:34:56  DEBUG     desktop_organiser.src.classifier  Rule-based: backup.zip → Archives (0.80)
+2026-04-12 22:34:56  DEBUG     desktop_organiser.src.classifier  Rule-based: setup.exe → Installers (0.80)
+2026-04-12 22:34:56  DEBUG     desktop_organiser.src.classifier  Rule-based: random.blob → Unknown (0.00)
+2026-04-12 22:34:56  DEBUG     desktop_organiser.src.classifier  Rule-based: resume.blob → Documents (0.20)
+2026-04-12 22:34:57  DEBUG     desktop_organiser.src.classifier  Rule-based: app.py → Code (0.80)
+2026-04-12 22:34:57  DEBUG     desktop_organiser.src.classifier  Rule-based: random.blob → Unknown (0.00)
+2026-04-12 22:34:57  WARNING   desktop_organiser.src.classifier  Correcting invalid LLM category 'MadeUpCategory' → Unknown
+2026-04-12 22:34:57  INFO      desktop_organiser.src.memory  Saved correction: resume.pdf -> Documents
+2026-04-12 22:34:57  DEBUG     desktop_organiser.src.memory  Memory hit for resume.pdf -> Documents (0.98)
+2026-04-12 22:34:57  INFO      desktop_organiser.src.memory  New category created: 'Uni'
+2026-04-12 22:34:57  INFO      desktop_organiser.src.memory  Saved correction: resume.pdf -> Uni
+2026-04-12 22:34:57  DEBUG     desktop_organiser.src.memory  Memory hit for resume.pdf -> Uni (0.98)
+2026-04-12 22:34:57  DEBUG     desktop_organiser.src.classifier  Rule-based: app.py → Code (0.80)
+2026-04-12 22:34:57  INFO      desktop_organiser.src.memory  New category created: 'App'
+2026-04-12 22:34:57  INFO      desktop_organiser.src.memory  Saved correction: arcade_adventure.lnk -> App
+2026-04-12 22:34:57  DEBUG     desktop_organiser.src.memory  Memory hit for arcade_adventure.lnk -> App (0.98)
+2026-04-12 22:34:57  INFO      desktop_organiser.src.memory  New category created: 'App'
+2026-04-12 22:34:57  INFO      desktop_organiser.src.memory  Saved correction: arcade_adventure.lnk -> App
+2026-04-12 22:34:57  DEBUG     desktop_organiser.src.memory  Memory hit for docker_desktop.lnk -> App (0.92)
+2026-04-12 22:34:57  INFO      desktop_organiser.src.memory  New category created: 'App'
+2026-04-12 22:34:57  INFO      desktop_organiser.src.memory  Saved correction: arcade_adventure.lnk -> App
+2026-04-12 22:34:57  INFO      desktop_organiser.src.memory  New category created: 'App'
+2026-04-12 22:34:57  INFO      desktop_organiser.src.memory  Saved correction: arcade_adventure.lnk -> App
+2026-04-12 22:34:57  DEBUG     desktop_organiser.src.memory  Memory hit for arcade_game.exe -> App (0.60)
+2026-04-12 22:34:57  INFO      desktop_organiser.src.memory  New category created: 'App'
+2026-04-12 22:34:57  INFO      desktop_organiser.src.memory  Saved correction: arcade_adventure.lnk -> App
+2026-04-12 22:34:57  INFO      desktop_organiser.src.memory  New category created: 'Shortcuts'
+2026-04-12 22:34:57  INFO      desktop_organiser.src.memory  Updated pattern for arcade_adventure.lnk -> Shortcuts
+2026-04-12 22:34:57  INFO      desktop_organiser.src.memory  New category created: 'App'
+2026-04-12 22:34:57  INFO      desktop_organiser.src.memory  Saved correction: arcade_adventure.lnk -> App
+2026-04-12 22:34:57  INFO      desktop_organiser.src.memory  New category created: 'Shortcuts'
+2026-04-12 22:34:57  INFO      desktop_organiser.src.memory  Updated pattern for arcade_adventure.lnk -> Shortcuts
+2026-04-12 22:34:57  INFO      desktop_organiser.src.memory  New category created: 'Uni'
+2026-04-12 22:34:57  INFO      desktop_organiser.src.memory  New category created: 'Uni'
+2026-04-12 22:34:57  INFO      desktop_organiser.src.memory  New category created: 'Newcategory'
+2026-04-12 22:34:57  INFO      desktop_organiser.src.memory  Saved correction: arcade_adventure.lnk -> NewCategory
+2026-04-12 22:34:57  DEBUG     desktop_organiser.src.memory  Memory hit for arcade_adventure.lnk -> NewCategory (0.98)
+2026-04-12 22:34:57  INFO      desktop_organiser.src.memory  New category created: 'App'
+2026-04-12 22:34:57  INFO      desktop_organiser.src.memory  Saved correction: arcade_adventure.lnk -> App
+2026-04-12 22:34:57  INFO      desktop_organiser.src.memory  New category created: 'Uni'
+2026-04-12 22:34:57  INFO      desktop_organiser.src.memory  Memory cleared
+2026-04-12 22:34:57  INFO      desktop_organiser.src.memory  New category created: 'App'
+2026-04-12 22:34:57  INFO      desktop_organiser.src.memory  Saved correction: arcade_adventure.lnk -> App
+2026-04-12 22:34:57  INFO      desktop_organiser.src.memory  Saved correction: data_pipeline.py -> Code
+2026-04-12 22:34:57  WARNING   desktop_organiser.src.memory  Could not load memory file C:\Users\namit\AppData\Local\Temp\pytest-of-namit\pytest-22\test_corrupted_json_handled_gr0\bad_memory.json: Expecting property name enclosed in double quotes: line 1 column 3 (char 2) - starting fresh
+2026-04-12 22:34:57  INFO      desktop_organiser.src.memory  New category created: 'App'
+2026-04-12 22:34:57  INFO      desktop_organiser.src.memory  Saved correction: arcade_adventure.lnk -> App
+2026-04-12 22:34:57  DEBUG     desktop_organiser.src.memory  Memory hit for arcade_adventure.lnk -> App (0.98)
+2026-04-12 22:34:57  INFO      desktop_organiser.src.memory  New category created: 'Shortcuts'
+2026-04-12 22:34:57  INFO      desktop_organiser.src.memory  Saved correction: other_app.lnk -> Shortcuts
+2026-04-12 22:34:57  INFO      desktop_organiser.src.memory  New category created: 'App'
+2026-04-12 22:34:57  INFO      desktop_organiser.src.memory  Saved correction: arcade_adventure.lnk -> App
+2026-04-12 22:34:57  DEBUG     desktop_organiser.src.memory  Memory hit for arcade_adventure.lnk -> App (0.98)
+2026-04-12 22:34:57  INFO      desktop_organiser.src.observer  Scanning: C:\Users\namit\AppData\Local\Temp\pytest-of-namit\pytest-22\test_finds_normal_file0\Desktop
+2026-04-12 22:34:57  DEBUG     desktop_organiser.src.observer  Found: resume.pdf (12 bytes)
+2026-04-12 22:34:57  INFO      desktop_organiser.src.observer  Found 1 file(s)
+2026-04-12 22:34:57  INFO      desktop_organiser.src.observer  Scanning: C:\Users\namit\AppData\Local\Temp\pytest-of-namit\pytest-22\test_skips_hidden_files0\Desktop
+2026-04-12 22:34:57  DEBUG     desktop_organiser.src.observer  Skipping hidden file: .DS_Store
+2026-04-12 22:34:57  DEBUG     desktop_organiser.src.observer  Skipping hidden file: .hidden_config
+2026-04-12 22:34:57  DEBUG     desktop_organiser.src.observer  Found: visible.txt (7 bytes)
+2026-04-12 22:34:57  INFO      desktop_organiser.src.observer  Found 1 file(s)
+2026-04-12 22:34:57  INFO      desktop_organiser.src.observer  Scanning: C:\Users\namit\AppData\Local\Temp\pytest-of-namit\pytest-22\test_skips_system_files0\Desktop
+2026-04-12 22:34:57  DEBUG     desktop_organiser.src.observer  Skipping ignored name: desktop.ini
+2026-04-12 22:34:57  DEBUG     desktop_organiser.src.observer  Found: my_notes.txt (5 bytes)
+2026-04-12 22:34:57  DEBUG     desktop_organiser.src.observer  Skipping ignored name: Thumbs.db
+2026-04-12 22:34:57  INFO      desktop_organiser.src.observer  Found 1 file(s)
+2026-04-12 22:34:57  INFO      desktop_organiser.src.observer  Scanning: C:\Users\namit\AppData\Local\Temp\pytest-of-namit\pytest-22\test_skips_directories0\Desktop
+2026-04-12 22:34:57  DEBUG     desktop_organiser.src.observer  Found: my_file.txt (1 bytes)
+2026-04-12 22:34:57  DEBUG     desktop_organiser.src.observer  Skipping non-file: my_folder
+2026-04-12 22:34:57  INFO      desktop_organiser.src.observer  Found 1 file(s)
+2026-04-12 22:34:57  INFO      desktop_organiser.src.observer  Scanning: C:\Users\namit\AppData\Local\Temp\pytest-of-namit\pytest-22\test_returns_correct_metadata0\Desktop
+2026-04-12 22:34:57  DEBUG     desktop_organiser.src.observer  Found: report.pdf (11 bytes)
+2026-04-12 22:34:57  INFO      desktop_organiser.src.observer  Found 1 file(s)
+2026-04-12 22:34:57  INFO      desktop_organiser.src.observer  Scanning: C:\Users\namit\AppData\Local\Temp\pytest-of-namit\pytest-22\test_extension_is_lowercase0\Desktop
+2026-04-12 22:34:57  DEBUG     desktop_organiser.src.observer  Found: Photo.JPG (0 bytes)
+2026-04-12 22:34:57  INFO      desktop_organiser.src.observer  Found 1 file(s)
+2026-04-12 22:34:57  INFO      desktop_organiser.src.observer  Scanning: C:\Users\namit\AppData\Local\Temp\pytest-of-namit\pytest-22\test_empty_desktop_returns_emp0\Desktop
+2026-04-12 22:34:57  INFO      desktop_organiser.src.observer  Found 0 file(s)
+2026-04-12 22:34:57  WARNING   desktop_organiser.src.observer  Scan path does not exist: C:\Users\namit\AppData\Local\Temp\pytest-of-namit\pytest-22\test_nonexistent_desktop_retur0\DoesNotExist
+2026-04-12 22:34:57  INFO      desktop_organiser.src.observer  Scanning: C:\Users\namit\AppData\Local\Temp\pytest-of-namit\pytest-22\test_multiple_files_all_return0\Desktop
+2026-04-12 22:34:57  DEBUG     desktop_organiser.src.observer  Found: data.zip (1 bytes)
+2026-04-12 22:34:57  DEBUG     desktop_organiser.src.observer  Found: notes.txt (1 bytes)
+2026-04-12 22:34:57  DEBUG     desktop_organiser.src.observer  Found: photo.png (1 bytes)
+2026-04-12 22:34:57  DEBUG     desktop_organiser.src.observer  Found: script.py (1 bytes)
+2026-04-12 22:34:57  INFO      desktop_organiser.src.observer  Found 4 file(s)
+2026-04-12 22:34:57  INFO      desktop_organiser.src.observer  Scanning: C:\Users\namit\AppData\Local\Temp\pytest-of-namit\pytest-22\test_mixed_desktop_only_return0\Desktop
+2026-04-12 22:34:57  DEBUG     desktop_organiser.src.observer  Skipping hidden file: .DS_Store
+2026-04-12 22:34:57  DEBUG     desktop_organiser.src.observer  Found: app.py (1 bytes)
+2026-04-12 22:34:57  DEBUG     desktop_organiser.src.observer  Skipping ignored name: desktop.ini
+2026-04-12 22:34:57  DEBUG     desktop_organiser.src.observer  Found: essay.docx (1 bytes)
+2026-04-12 22:34:57  DEBUG     desktop_organiser.src.observer  Skipping non-file: some_folder
+2026-04-12 22:34:57  INFO      desktop_organiser.src.observer  Found 2 file(s)

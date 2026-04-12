@@ -25,11 +25,7 @@ from src.actor import act, summarise_actions
 def desktop(tmp_path, monkeypatch):
     organised = tmp_path / "Organised"
     monkeypatch.setattr("src.actor.ORGANISED_ROOT", organised)
-
-    # Redirect move log away from real moves.log
-    fake_moves_log = tmp_path / "moves.log"
-    monkeypatch.setattr("src.actor.MOVES_LOG", fake_moves_log)
-
+    monkeypatch.setattr("src.actor.MOVES_LOG", tmp_path / "moves.log")  # ← add this
     return tmp_path, organised
 
 
@@ -201,15 +197,15 @@ class TestSummariseActions:
     def test_summarise_does_not_crash_on_empty_log(self):
         summarise_actions([])  # should not raise
 
-    def test_summarise_counts_correctly(self, caplog):
-        import logging
+    def test_summarise_counts_correctly(self, capsys):
         log = [
             {"action": "moved"},
             {"action": "moved"},
             {"action": "dry_run"},
             {"action": "skipped"},
         ]
-        with caplog.at_level(logging.INFO):
-            summarise_actions(log)
-        assert "moved" in caplog.text
-        assert "2" in caplog.text
+        summarise_actions(log)
+        captured = capsys.readouterr()
+        output = captured.out + captured.err
+        assert "moved" in output
+        assert "2" in output

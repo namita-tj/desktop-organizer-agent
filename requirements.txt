@@ -5,3 +5,7 @@
 # ── Dev / testing ──────────────────────────────────────────────────────────────
 pytest==8.3.5
 pytest-cov==6.1.0
+pymupdf
+python-docx
+openpyxl
+pytesseract

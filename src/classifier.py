@@ -14,9 +14,10 @@ import json
 import urllib.request
 import urllib.error
 import src.memory as _memory
-from src.memory import MEMORY_FILE  # expose for test monkeypatching
+from src.memory import MEMORY_FILE, lookup
 from src.logger import get_logger
-
+from src.extractor import extract_text
+from src.entities import extract_entities
 log = get_logger(__name__)
 
 # ── Rule-based fallback ────────────────────────────────────────────────────────
@@ -100,35 +101,43 @@ def _rule_based_classify(file_obs: dict) -> dict:
 OLLAMA_URL   = "http://localhost:11434/api/generate"
 OLLAMA_MODEL = "llama3.2"
 
-PROMPT_TEMPLATE = """You are a file classification assistant.
-Given a filename and its metadata, classify it into exactly one of these categories:
-Documents, Images, Code, Archives, Installers, Videos, Audio, Unknown.
+PROMPT_TEMPLATE = """You are an enterprise document classifier.
+Classify this document based on its filename AND content.
 
-Rules:
-- .lnk files are Shortcuts - classify as Unknown
-- .html .json .yaml .toml files -> Code
-- .pdf .docx .pptx .xlsx .txt -> Documents
-- When unsure, use your best judgment and set a low confidence
+Categories: {categories}
 
-You must respond with ONLY valid JSON, no other text, no markdown, no explanation:
+Document metadata:
+Filename:   {name}
+Extension:  {extension}
+Size:       {size_kb} KB
+
+Content preview (first 2000 chars):
+{content}
+
+Extracted entities:
+{entities}
+
+Respond ONLY with valid JSON:
 {{
   "category": "<category>",
-  "confidence": <float between 0.0 and 1.0>,
-  "reasoning": "<one short sentence>"
-}}
-
-File to classify:
-Filename: {name}
-Extension: {extension}
-Size: {size_kb} KB"""
+  "subcategory": "<specific type e.g. invoice, nda, lab_result>",
+  "confidence": <0.0-1.0>,
+  "reasoning": "<one sentence>",
+  "suggested_filename": "<structured name e.g. 2026-04-12_Siemens_Invoice_4521.pdf>"
+}}"""
 
 
 def _build_prompt(file_obs: dict) -> str:
-    size_kb = round(file_obs.get("size_bytes", 0) / 1024, 1)
+    size_kb   = round(file_obs.get("size_bytes", 0) / 1024, 1)
+    categories = ", ".join(VALID_CATEGORIES)
+
     return PROMPT_TEMPLATE.format(
         name=file_obs["name"],
         extension=file_obs["extension"],
-        size_kb=size_kb
+        size_kb=size_kb,
+        content=file_obs.get("content", ""),
+        entities=json.dumps(file_obs.get("entities", {}), indent=2),
+        categories=categories
     )
 
 
@@ -179,36 +188,57 @@ def _call_llm(file_obs: dict) -> dict | None:
 # ── Public interface ───────────────────────────────────────────────────────────
 
 def classify_file(file_obs: dict) -> dict:
-    """
-    Classify a file observation dict.
+    print(f"  Classifying: {file_obs['name']}")
 
-    Pipeline: Memory -> Ollama LLM -> Rule-based fallback
-    """
-    log.info("Classifying: %s", file_obs["name"])
+    # ── Layer 0: Content extraction ───────────────────────────────────────────
+    content = ""
+    entities = {}
 
-    # Layer 1: Memory
-    memory_result = _memory.lookup(file_obs, MEMORY_FILE)
+    if "path" in file_obs:
+        content = extract_text(file_obs)
+        entities = extract_entities(content) if content else {}
+
+    # Enrich file_obs so the LLM prompt gets content
+    enriched_obs = dict(file_obs)
+    enriched_obs["content"] = content
+    enriched_obs["entities"] = entities
+
+    # ── Layer 1: Memory ───────────────────────────────────────────────────────
+    memory_result = lookup(enriched_obs)
+
     if memory_result:
-        log.info("Memory hit for %s -> %s", file_obs["name"], memory_result["category"])
+        memory_result["entities"]    = entities
+        memory_result["is_sensitive"] = entities.get("is_sensitive", False)
         return memory_result
 
-    # Layer 2: LLM
-    llm_result = _call_llm(file_obs)
+    # ── Layer 2: Ollama LLM ───────────────────────────────────────────────────
+    llm_result = _call_llm(enriched_obs)
+
     if llm_result:
         category = llm_result.get("category", "Unknown")
+
         if category not in VALID_CATEGORIES:
+            log.warning("Correcting invalid LLM category '%s' → Unknown", category)
             category = "Unknown"
+
         return {
-            "name":       file_obs["name"],
-            "category":   category,
+            "name": file_obs["name"],
+            "category": category,
+            "subcategory": llm_result.get("subcategory") or entities.get("document_type", ""),
             "confidence": round(float(llm_result.get("confidence", 0.8)), 2),
-            "reasoning":  llm_result.get("reasoning", ""),
-            "method":     "llm"
+            "reasoning": llm_result.get("reasoning", ""),
+            "suggested_filename": llm_result.get("suggested_filename", ""),
+            "entities": entities,
+            "is_sensitive": entities.get("is_sensitive", False),
+            "method": "llm"
         }
 
-    # Layer 3: Rule-based fallback
-    log.info("LLM unavailable for %s - falling back to rules", file_obs["name"])
-    return _rule_based_classify(file_obs)
+
+    # ── Layer 3: Rule-based fallback ──────────────────────────────────────────
+    result = _rule_based_classify(file_obs)
+    result["entities"]    = entities
+    result["is_sensitive"] = entities.get("is_sensitive", False)
+    return result
 
 
 # ── Quick test ─────────────────────────────────────────────────────────────────

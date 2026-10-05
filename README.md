@@ -1,136 +1,140 @@
-![Tests](https://github.com/namita-tj/desktop-organizer-agent/actions/workflows/tests.yml/badge.svg)
+![Tests](https://github.com/namita-tj/desktop-organizer-agent/actions/workflows/ci.yml/badge.svg)
+
 # 🗂️ Desktop Organiser Agent
 
-An LLM-powered agent that scans your Desktop, classifies each file using Claude, and moves them into tidy, organised folders — with a rule-based fallback for offline use.
+A local AI agent that scans a folder, works out what each file is, and sorts it into tidy category folders. It classifies files with a **local LLM (Llama 3.2 via Ollama)**, so file contents never leave your machine. It **learns from your corrections**, and it records every move in an audit log that you can undo.
+
+```
+python main.py --move --feedback
+```
 
 ---
 
 ## ✨ Features
 
-- **LLM classification** — Claude reasons about filenames and metadata to determine the best category for each file
-- **Rule-based fallback** — works offline if the Anthropic API is unavailable
-- **Confidence threshold** — skips files the model isn't confident about, so uncertain files are never misplaced
-- **Dry run by default** — nothing moves unless you explicitly pass `--move`
-- **Collision handling** — timestamps duplicate filenames instead of silently overwriting them
-- **Clean summary** — see exactly what was moved, skipped, or errored after each run
+- **Three-stage classification:** learned memory first, then the local LLM, then a rule-based fallback, so the agent still works offline or without Ollama.
+- **Reads file contents, not just names:** text is extracted from PDFs (with an OCR fallback for scanned pages), DOCX, XLSX and CSV files. Key entities such as amounts, dates and reference numbers are passed to the LLM along with the text.
+- **Learns from feedback:** with `--feedback` you confirm or correct each decision. Corrections are stored in persistent memory and reused on similar files. You can also create new categories on the fly.
+- **Safe by default:** nothing moves without `--move`, files below the confidence threshold are skipped, and duplicate filenames get a timestamp instead of being overwritten.
+- **Audit trail and undo:** every move is written as a JSON Lines audit entry (source, destination, category, confidence, method, reasoning), and `--undo` reverses the last run.
+- **Sensitive-document flag:** documents that look sensitive are marked in the output.
+- **Invoice field extraction:** a standalone module pulls vendor, invoice ID, total, VAT rate, due date and currency from invoice text. It handles OCR noise and both EU (`€29.155,00`) and US (`$29,155.00`) number formats.
 
 ---
 
 ## 🏗️ Architecture
 
 ```
-Desktop files
-     │
-     ▼
- observer.py        → scans files, collects metadata
-     │
-     ▼
- classifier.py      → asks Claude to classify each file
- (+ rule-based      → falls back if API unavailable)
-  fallback)
-     │
-     ▼
-  actor.py          → moves files into Organised/<Category>/
+ folder
+   │
+   ▼
+ observer.py     → scans files and collects metadata
+   │
+   ▼
+ classifier.py   → 1. memory.py      learned patterns from your corrections
+                   2. local LLM      Ollama (llama3.2), using extracted content
+                                     from extractor.py + entities.py
+                   3. rule-based     extension and keyword fallback
+   │
+   ▼
+ actor.py        → moves the file to Organised/<Category>/
+                   and writes an audit entry to logs/moves.log
 ```
 
-The project is split into three focused modules under `src/`, plus a top-level `main.py` entry point and a `tests/` directory.
+| Module | Responsibility |
+|---|---|
+| `src/observer.py` | Scans the target folder and builds a metadata record per file |
+| `src/classifier.py` | Orchestrates memory → LLM → rules and validates the LLM's JSON output |
+| `src/extractor.py` | Extracts text from PDF (incl. OCR fallback), DOCX, XLSX and CSV |
+| `src/entities.py` | Regex-based extraction of amounts, dates, references and document type |
+| `src/memory.py` | Persistent learning layer: stores corrections and custom categories |
+| `src/actor.py` | Moves files, handles collisions, writes the audit log, supports undo |
+| `src/logger.py` | Central logging to console and a rotating log file |
+| `extractors/invoice.py` | Structured invoice field extraction (standalone, not yet wired into the pipeline) |
 
 ---
 
 ## 🚀 Quickstart
 
-**1. Set your Anthropic API key**
+**1. Install Ollama and pull the model** (optional; without it the agent uses memory and rules only)
 
 ```bash
-export ANTHROPIC_API_KEY=your_key_here
+# install from https://ollama.com, then:
+ollama pull llama3.2
 ```
 
-**2. Preview (safe — nothing is moved)**
+**2. Install the optional extraction dependencies**
+
+```bash
+pip install -r requirements.txt
+```
+
+The core agent uses only the Python standard library. The extras enable PDF, DOCX and spreadsheet reading, OCR, and the test suite. OCR also needs the Tesseract binary installed on your system.
+
+**3. Preview what would happen (nothing is moved)**
 
 ```bash
 python main.py
 ```
 
-**3. Move files**
+**4. Organise for real, and teach the agent as it goes**
 
 ```bash
-python main.py --move
-```
-
-**4. Only move files the model is highly confident about**
-
-```bash
-python main.py --move --threshold 0.8
+python main.py --move --feedback
 ```
 
 ---
 
-## 📁 Output Structure
+## ⚙️ Commands
 
-After running with `--move`, your Desktop will look like:
-
-```
-Desktop/
-└── Organised/
-    ├── Documents/
-    ├── Images/
-    ├── Code/
-    ├── Archives/
-    ├── Installers/
-    ├── Videos/
-    └── Audio/
-```
+| Command | What it does |
+|---|---|
+| `python main.py` | Dry run on `~/Desktop` |
+| `--move` | Actually move files |
+| `--feedback` | Ask for a correction after each classification and learn from it |
+| `--threshold 0.7` | Only act on classifications at or above this confidence (default `0.6`) |
+| `--path ~/Downloads` | Scan a different folder |
+| `--stats` | Show what the agent has learned |
+| `--clear-memory` | Wipe all learned patterns |
+| `--audit` | Show the most recent audit log entries (`--audit-lines N` to change how many) |
+| `--undo` | Move the files from the last run back to where they were |
 
 ---
 
-## ⚙️ Configuration
-
-| Flag | Default | Description |
-|---|---|---|
-| `--move` | off | Actually move files (dry run otherwise) |
-| `--threshold` | `0.0` | Minimum confidence score (0–1) required to move a file |
-
----
-
-## 🧠 Architecture Decisions
+## 🧠 Design Decisions
 
 | Decision | Reason |
 |---|---|
-| LLM-first, rules as fallback | LLM handles edge cases rules can't; fallback ensures reliability without an API key |
-| Dry run by default | Destructive operations should always require explicit opt-in |
-| Confidence threshold | Low-confidence classifications are worse than no classification |
-| Timestamp collision handling | Safer than silent overwrites |
+| Local LLM instead of a cloud API | File contents can be private; nothing should leave the machine |
+| Memory before the LLM | A user's own corrections are the most reliable signal and the cheapest to apply |
+| Rule-based fallback | The agent keeps working when Ollama isn't running |
+| LLM output validated against known categories | A malformed or invented category is never acted on |
+| Dry run by default | Destructive operations should always need explicit opt-in |
+| Confidence threshold | A wrong move is worse than no move |
+| JSON Lines audit log + undo | Every action is traceable and reversible |
 
 ---
 
-## 🛠️ Requirements
-
-- Python 3.8+
-- No third-party libraries required — Claude API calls use Python's built-in `urllib`
-- An [Anthropic API key](https://console.anthropic.com/) (optional — rule-based fallback works without one)
-
----
-
-## 🧪 Running Tests
+## 🧪 Testing
 
 ```bash
-pytest tests/
+pytest tests/ -v
 ```
 
-Test fixtures and shared configuration live in `conftest.py` at the project root.
+71 unit tests across the observer, classifier, memory, actor and invoice extractor, run by GitHub Actions on every push. The tests don't need Ollama; the LLM call is mocked.
+
+There is also a small classification evaluation on a labelled set of 42 example filenames:
+
+```bash
+python tests/eval.py
+```
+
+It reports overall accuracy plus per-category precision, recall, F1 and a confusion matrix. The set is small and hand-written, so treat it as a regression check rather than a benchmark.
 
 ---
 
-## 🔭 Extending This
+## 🔭 Limitations and Next Steps
 
-- Add a `--undo` flag using a move log saved to JSON
-- Add email or Slack notifications after organising
-- Schedule with `cron` for automatic daily runs
-- Fine-tune a small local model on your own file naming patterns
-- Support custom category mappings via a config file
-
----
-
-## 📄 License
-
-MIT
+- Organised folders are always created under `~/Desktop/Organised`, even when `--path` points elsewhere.
+- The invoice extractor is tested but not yet connected to the main pipeline. The next step is to run it on files classified as invoices and attach the fields to the audit entry.
+- The evaluation set is small. A larger set of real, anonymised files would give a more honest accuracy figure.
